@@ -1,16 +1,21 @@
 <?php
 
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Helpers\JwtHelper;
 
 Route::get('/', function () {
+    //contoh 
+    $token = JwtHelper::generateToken("e0d77f022c36172beafd31f743aa08e432a150e3d3df880c94ea8a7f3febcb14",11);
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
+        'token' =>$token,
     ]);
 });
 
