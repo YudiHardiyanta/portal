@@ -1,6 +1,6 @@
 import { Head, Link } from '@inertiajs/react';
 import { useState } from "react";
-
+import FeedbackFAB from '@/Components/FeedbackFAB'; 
 
 export default function Welcome({ auth, laravelVersion, phpVersion, token }) {
     const handleImageError = () => {
@@ -18,8 +18,6 @@ export default function Welcome({ auth, laravelVersion, phpVersion, token }) {
     const [activeTab, setActiveTab] = useState("data");
 
     //sampel untuk akses ke metabase
-    
-
     var iframeUrl = "https://metabase.statsbali.id" + "/embed/dashboard/" + token +
         "#bordered=true&titled=true";
 
@@ -31,7 +29,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion, token }) {
                 <h1 class="text-xl font-bold">Portal Satudata Bali</h1>
                 <ul class="flex space-x-6">
                     <li><a href="#" class="hover:text-gray-300">Beranda</a></li>
-                    <li><a href="/login" class="hover:text-gray-300">Login</a></li>
+                    <Link href={route('login')} className="hover:text-gray-300">Log in</Link>
                 </ul>
             </nav>
 
@@ -71,7 +69,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion, token }) {
                     </div>
 
                     {/* Component data dan standar data */}
-                    <div className="mx-auto mt-10 bg-white shadow-lg rounded-2xl border">
+                    <div className="mx-auto mt-10 bg-white border shadow-lg rounded-2xl">
                         {/* Header Tab */}
                         <div className="flex border-b">
                             <button
@@ -120,7 +118,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion, token }) {
 
                             {activeTab === "metadata" && (
                                 <div>
-                                    <h2 className="text-lg font-bold mb-2">Metadata</h2>
+                                    <h2 className="mb-2 text-lg font-bold">Metadata</h2>
                                     <p className="text-gray-700">
                                         Informasi Metadata ditampilkan di sini.
                                     </p>
@@ -129,7 +127,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion, token }) {
 
                             {activeTab === "standar" && (
                                 <div>
-                                    <h2 className="text-lg font-bold mb-2">Standar Data</h2>
+                                    <h2 className="mb-2 text-lg font-bold">Standar Data</h2>
                                     <p className="text-gray-700">
                                         Penjelasan Standar Data ditampilkan di sini.
                                     </p>
@@ -146,7 +144,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion, token }) {
                 <p>&copy; 2025 Portal Satudata Bali.</p>
             </footer>
 
-
+            <FeedbackFAB />
 
         </>
     );

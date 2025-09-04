@@ -1,11 +1,12 @@
 <?php
 
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Helpers\JwtHelper;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FeedbackController;
 
 Route::get('/', function () {
     //contoh 
@@ -18,7 +19,7 @@ Route::get('/', function () {
         'token' =>$token,
     ]);
 });
-
+Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
