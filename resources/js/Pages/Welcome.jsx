@@ -1,6 +1,6 @@
-import { Head, Link } from '@inertiajs/react';
 import { useState } from "react";
-import FeedbackFAB from '@/Components/FeedbackFAB'; 
+import AppLayout from '@/Layouts/AppLayout';
+import { router } from '@inertiajs/react';
 
 export default function Welcome({ auth, laravelVersion, phpVersion, token }) {
     const handleImageError = () => {
@@ -16,24 +16,28 @@ export default function Welcome({ auth, laravelVersion, phpVersion, token }) {
 
     //untuk tab data, metadata dan standar data
     const [activeTab, setActiveTab] = useState("data");
+    const [keyword, setKeyword] = useState("");
+
+    const handleSearch = () => {
+        if (keyword.trim() !== "") {
+            router.get(route("indicators.index"), { q: keyword }, {
+                preserveState: false,
+                replace: false,
+            });
+        } else {
+            router.get(route("indicators.index"), {}, {
+                preserveState: false,
+                replace: false,
+            });
+        }
+    };
 
     //sampel untuk akses ke metabase
     var iframeUrl = "https://metabase.statsbali.id" + "/embed/dashboard/" + token +
         "#bordered=true&titled=true";
 
     return (
-        <>
-            <Head title="Beranda" />
-
-            <nav class="sticky top-0 z-50 bg-blue-900 text-white px-6 py-4 flex justify-between items-center">
-                <h1 class="text-xl font-bold">Portal Satudata Bali</h1>
-                <ul class="flex space-x-6">
-                    <li><a href="#" class="hover:text-gray-300">Beranda</a></li>
-                    <Link href={route('login')} className="hover:text-gray-300">Log in</Link>
-                </ul>
-            </nav>
-
-
+        <AppLayout title="Beranda">
             <section class="relative bg-blue-800 text-white flex flex-col items-center justify-center py-20">
                 <img src="https://picsum.photos/1200/800?grayscale"
                     alt="Jumbotron Image"
@@ -41,14 +45,24 @@ export default function Welcome({ auth, laravelVersion, phpVersion, token }) {
                 <div class="relative z-10 text-center">
                     <h2 class="text-4xl font-bold mb-4">Selamat Datang</h2>
                     <p class="mb-6">Cari informasi atau data yang kamu butuhkan di sini</p>
-                    <div class="flex justify-center">
-                        <input type="text" placeholder="Cari sesuatu..."
-                            class="px-4 py-2 rounded-l-lg w-64 text-black focus:outline-none"></input>
-                        <button class="bg-blue-900 px-4 py-2 rounded-r-lg hover:bg-blue-700">Cari</button>
+                    <div className="flex justify-center">
+                        <input
+                            type="text"
+                            placeholder="Cari sesuatu..."
+                            value={keyword}
+                            onChange={(e) => setKeyword(e.target.value)}
+                            className="w-64 px-4 py-2 text-black rounded-l-lg focus:outline-none"
+                        />
+                        <button
+                            onClick={handleSearch}
+                            className="px-4 py-2 bg-blue-900 rounded-r-lg hover:bg-blue-700"
+                        >
+                            Cari
+                        </button>
                     </div>
                 </div>
             </section>
-
+            
             <main class="flex-grow bg-white px-6 py-10">
                 <h3 class="text-2xl font-semibold mb-4">Konten Utama</h3>
                 <p class="text-gray-700 leading-relaxed">
@@ -139,13 +153,6 @@ export default function Welcome({ auth, laravelVersion, phpVersion, token }) {
 
                 </p>
             </main>
-
-            <footer class="bg-blue-900 text-white text-center py-4">
-                <p>&copy; 2025 Portal Satudata Bali.</p>
-            </footer>
-
-            <FeedbackFAB />
-
-        </>
+        </AppLayout>
     );
 }

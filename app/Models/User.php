@@ -45,4 +45,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function indicatorLikes()
+    {
+        return $this->hasMany(IndicatorLike::class);
+    }
 }
