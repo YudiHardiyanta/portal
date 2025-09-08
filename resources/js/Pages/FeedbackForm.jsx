@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { useForm, usePage } from "@inertiajs/react";
+import { useForm } from "@inertiajs/react";
 
-export default function FeedbackForm({ onClose }) {
-  const { improvements } = usePage().props;
-
+export default function FeedbackForm({ improvements, onClose }) {
   const { data, setData, post, processing, errors, reset } = useForm({
     satisfaction: "",
     improvements: [],
@@ -13,22 +11,24 @@ export default function FeedbackForm({ onClose }) {
   const [localSuccess, setLocalSuccess] = useState("");
   const [visible, setVisible] = useState(true);
 
-const submit = (e) => {
-  e.preventDefault();
-  post(route("feedback.store"), {
-    preserveScroll: true,
-    onSuccess: () => {
-      setLocalSuccess("Terima kasih sudah mengisi feedback 🙏");
-      reset();
-      setTimeout(() => {
-        setLocalSuccess("");
-        setVisible(false);
-        if (onClose) onClose();
-      }, 2500);
-    },
-  });
-};
-  if (!visible) return null; 
+  const submit = (e) => {
+    e.preventDefault();
+    post(route("feedback.store"), {
+      preserveScroll: true,
+      onSuccess: () => {
+        setLocalSuccess("Terima kasih sudah mengisi feedback 🙏");
+        reset();
+        setTimeout(() => {
+          setLocalSuccess("");
+          setVisible(false);
+          if (onClose) onClose();
+        }, 2500);
+      },
+    });
+  };
+
+  if (!visible) return null;
+
   const toggleImprovement = (id) => {
     setData(
       "improvements",
@@ -78,7 +78,7 @@ const submit = (e) => {
           Apa yang dapat kami tingkatkan?
         </p>
 
-        {improvements && improvements.length > 0 ? (
+        {improvements.length > 0 ? (
           <div className="flex flex-wrap gap-2">
             {improvements.map((imp) => (
               <button
@@ -127,4 +127,3 @@ const submit = (e) => {
     </form>
   );
 }
-
