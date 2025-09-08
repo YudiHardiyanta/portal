@@ -20,7 +20,7 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
         'token' =>$token,
     ]);
-});
+})->name('home');
 Route::get('/api/improvements', function () {
     return response()->json(Improvement::all(['id', 'name']));
 });

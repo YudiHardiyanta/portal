@@ -4,37 +4,60 @@ import FeedbackFAB from "@/Components/FeedbackFAB";
 
 export default function AppLayout({ children, title = "Portal Satudata Bali" }) {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Head */}
-      <Head title={title} />
+    <div className="flex flex-col min-h-screen bg-gray-50">
+      <Head>
+        <title>{title}</title>
+        <link rel="icon" href="/images/logo-bali.png" type="image/png" />
+      </Head>
 
-      {/* Navbar */}
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 text-white bg-blue-900">
-        <h1 className="text-xl font-bold">{title}</h1>
-        <ul className="flex space-x-6">
+      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-white shadow-md">
+        <h1 className="flex items-center space-x-2">
+          <Link href={route("home")} className="flex items-center">
+            <img
+              src="/images/logo-satu-data.png"
+              alt="Satu Data"
+              className="w-auto h-10"
+            />
+          </Link>
+        </h1>
+
+        <ul className="flex space-x-8 text-lg font-semibold">
           <li>
-            <Link href="#" className="hover:text-gray-300">
+            <Link
+              href={route("home")}
+              className={`px-1 pb-2 transition ${
+                route().current("home")
+                  ? "text-blue-900 border-b-4 border-blue-900"
+                  : "text-[#1C2541] hover:text-blue-900"
+              }`}
+            >
               Beranda
             </Link>
           </li>
           <li>
-            <Link href={route("login")} className="hover:text-gray-300">
+            <Link
+              href={route("login")}
+              className={`px-1 pb-2 transition ${
+                route().current("login")
+                  ? "text-blue-900 border-b-4 border-blue-900"
+                  : "text-[#1C2541] hover:text-blue-900"
+              }`}
+            >
               Log in
             </Link>
           </li>
         </ul>
       </nav>
 
-      {/* Konten utama */}
       <main className="flex-1">{children}</main>
-
-      {/* Footer */}
+      
       <footer className="py-4 text-center text-white bg-blue-900">
-        <p>&copy; {new Date().getFullYear()} Portal Satudata Bali.</p>
+        <p className="text-sm">
+          &copy; {new Date().getFullYear()} Portal Satudata Bali. All rights reserved.
+        </p>
       </footer>
 
-      {/* Feedback Floating Action Button */}
-      <FeedbackFAB/>
+      <FeedbackFAB />
     </div>
   );
 }
