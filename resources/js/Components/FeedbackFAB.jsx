@@ -1,9 +1,9 @@
 import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { X, MessageCircle } from "lucide-react";
 import { useState } from "react";
-import FeedbackForm from "./FeedbackForm";
+import FeedbackForm from "../Pages/FeedbackForm";
 
-export default function FeedbackFAB() {
+export default function FeedbackFAB({ improvements }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -38,7 +38,10 @@ export default function FeedbackFAB() {
             </DialogTitle>
 
             {/* Form Feedback */}
-            <FeedbackForm onSubmitted={() => setIsOpen(false)} />
+           <FeedbackForm
+              improvements={improvements}
+              onClose={() => setIsOpen(false)}
+            />
           </DialogPanel>
         </div>
       </Dialog>

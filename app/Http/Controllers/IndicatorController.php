@@ -16,10 +16,9 @@ class IndicatorController extends Controller
 
         $indicators = Indicator::withCount('likes')
             ->when($q, function ($query, $q) {
+                // Search judul indikator
                 $query->where(function ($subQuery) use ($q) {
-                    $subQuery->where('name', 'like', "%{$q}%")
-                        ->orWhere('description', 'like', "%{$q}%")
-                        ->orWhere('location', 'like', "%{$q}%");
+                    $subQuery->where('name', 'like', "%{$q}%");
                 });
             }) 
             ->latest()

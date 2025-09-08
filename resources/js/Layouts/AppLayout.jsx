@@ -34,7 +34,7 @@ export default function AppLayout({ children, title = "Portal Satudata Bali" }) 
       </footer>
 
       {/* Feedback Floating Action Button */}
-      <FeedbackFAB />
+      <FeedbackFAB/>
     </div>
   );
 }

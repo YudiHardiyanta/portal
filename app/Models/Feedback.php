@@ -9,12 +9,7 @@ class Feedback extends Model
     protected $table = 'feedback';
     protected $fillable = [
         'satisfaction',
-        'job',
-        'improvements',
         'message',
-    ];
-    protected $casts = [
-        'improvements' => 'array', 
     ];
     public function improvements()
     {

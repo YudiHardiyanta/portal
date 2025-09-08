@@ -13,10 +13,8 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('satisfaction'); // 1-5 (emoji)
-            $table->string('job')->nullable(); // pekerjaan terakhir
-            $table->json('improvements')->nullable(); // multi-select improvement
-            $table->text('message')->nullable(); // saran tambahan
+            $table->tinyInteger('satisfaction');
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }
