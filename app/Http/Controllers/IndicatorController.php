@@ -8,34 +8,29 @@ use Inertia\Inertia;
 
 class IndicatorController extends Controller
 {
-    // Menampilkan daftar indikator + pencarian
+    // Menampilkan daftar indikator
     public function index(Request $request)
     {
-        $user = $request->user();
-        $q = $request->query('q');
+        $query = Indicator::query();
 
-        $indicators = Indicator::withCount('likes')
-            ->when($q, function ($query, $q) {
-                // Search judul indikator
-                $query->where(function ($subQuery) use ($q) {
-                    $subQuery->where('name', 'like', "%{$q}%");
-                });
-            }) 
-            ->latest()
-            ->get()
-            ->map(function ($indicator) use ($user) {
-                $indicator->liked = $user
-                    ? $indicator->likes()->where('user_id', $user->id)->exists()
-                    : false;
-                return $indicator;
-            });
+        if ($request->q) {
+            $query->where('name', 'like', "%{$request->q}%");
+        }
 
-        return Inertia::render('Search/Index', [
+        if ($request->sort === 'latest') {
+            $query->orderBy('created_at', 'desc');
+        } elseif ($request->sort === 'az') {
+            $query->orderBy('name', 'asc');
+        } elseif ($request->sort === 'za') {
+            $query->orderBy('name', 'desc');
+        }
+
+        $indicators = $query->paginate(10)->withQueryString();
+
+        return inertia('Search/Index', [
             'indicators' => $indicators,
-            'query' => $q,
-            'auth' => [
-                'user' => $user,
-            ],
+            'query' => $request->q,
+            'sort' => $request->sort,
         ]);
     }
 

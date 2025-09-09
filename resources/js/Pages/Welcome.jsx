@@ -38,31 +38,38 @@ export default function Welcome({ auth, laravelVersion, phpVersion, token }) {
 
     return (
         <AppLayout title="Beranda">
-            <section class="relative bg-blue-800 text-white flex flex-col items-center justify-center py-20">
-                <img src="https://picsum.photos/1200/800?grayscale"
-                    alt="Jumbotron Image"
-                    class="absolute inset-0 w-full h-full object-cover opacity-50"></img>
-                <div class="relative z-10 text-center">
-                    <h2 class="text-4xl font-bold mb-4">Selamat Datang</h2>
-                    <p class="mb-6">Cari informasi atau data yang kamu butuhkan di sini</p>
-                    <div className="flex justify-center">
-                        <input
-                            type="text"
-                            placeholder="Cari sesuatu..."
-                            value={keyword}
-                            onChange={(e) => setKeyword(e.target.value)}
-                            className="w-64 px-4 py-2 text-black rounded-l-lg focus:outline-none"
-                        />
-                        <button
-                            onClick={handleSearch}
-                            className="px-4 py-2 bg-blue-900 rounded-r-lg hover:bg-blue-700"
-                        >
-                            Cari
-                        </button>
-                    </div>
-                </div>
-            </section>
-            
+        <section className="relative flex flex-col items-center justify-center py-20 text-white bg-blue-800">
+        <img
+            src="https://picsum.photos/1200/800?grayscale"
+            alt="Jumbotron Image"
+            className="absolute inset-0 object-cover w-full h-full opacity-50"
+        />
+        <div className="relative z-10 text-center">
+            <h2 className="mb-4 text-4xl font-bold">Selamat Datang</h2>
+            <p className="mb-6">Cari informasi atau data yang kamu butuhkan di sini</p>
+            <form
+            onSubmit={(e) => {
+                e.preventDefault();
+                handleSearch();
+            }}
+            className="flex justify-center"
+            >
+            <input
+                type="text"
+                placeholder="Cari sesuatu..."
+                value={keyword}
+                onChange={(e) => setKeyword(e.target.value)}
+                className="w-64 px-4 py-2 text-black rounded-l-lg focus:outline-none"
+            />
+            <button
+                type="submit"
+                className="px-4 py-2 bg-blue-900 rounded-r-lg hover:bg-blue-700"
+            >
+                Cari
+            </button>
+            </form>
+        </div>
+        </section>
             <main class="flex-grow bg-white px-6 py-10">
                 <h3 class="text-2xl font-semibold mb-4">Konten Utama</h3>
                 <p class="text-gray-700 leading-relaxed">
