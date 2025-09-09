@@ -10,42 +10,32 @@ export default function List({ indicators = [], query = "", sort = "" }) {
     const [localSort, setLocalSort] = useState(sort || "");
     const [localIndicators, setLocalIndicators] = useState(indicators.data || []);
     const [loading, setLoading] = useState(false);
-    const [skipEffect, setSkipEffect] = useState(false);
 
     useEffect(() => {
         setLocalIndicators(indicators.data || []);
     }, [indicators]);
 
-    useEffect(() => {
-        if (skipEffect) {
-            setSkipEffect(false);
-            return;
-        }
-
-        const delay = setTimeout(() => {
-            if (keyword !== query || localSort !== sort) {
-                setLoading(true);
-                router.get(
-                    route("indicators.index"),
-                    { q: keyword, sort: localSort },
-                    {
-                        preserveState: true,
-                        replace: true,
-                        onFinish: () => setLoading(false),
-                    }
-                );
+    const handleSearch = () => {
+        setLoading(true);
+        router.get(
+            route("indicators.index"),
+            { q: keyword, sort: localSort },
+            {
+                preserveState: true,
+                replace: true,
+                onFinish: () => setLoading(false),
             }
-        }, 600);
-
-        return () => clearTimeout(delay);
-    }, [keyword, localSort]);
+        );
+    };
 
     const handleSortChange = (e) => {
         const value = e.target.value;
         setLocalSort(value);
+        setLoading(true);
         router.get(route("indicators.index"), { q: keyword, sort: value }, {
             preserveState: true,
             replace: true,
+            onFinish: () => setLoading(false),
         });
     };
 
@@ -83,10 +73,13 @@ export default function List({ indicators = [], query = "", sort = "" }) {
 
     const handlePageClick = (url) => {
         if (!url) return;
-        setSkipEffect(true); 
-        router.get(url, {}, { preserveState: true });
+        setLoading(true);
+        router.get(url, {}, {
+            preserveState: true,
+            onFinish: () => setLoading(false),
+        });
     };
-    
+
     return (
         <AppLayout>
             <div className="flex flex-col min-h-screen px-6 py-10">
@@ -99,22 +92,12 @@ export default function List({ indicators = [], query = "", sort = "" }) {
                                 value={keyword}
                                 onChange={(e) => setKeyword(e.target.value)}
                                 onKeyDown={(e) => {
-                                    if (e.key === "Enter") {
-                                        router.get(route("indicators.index"), {
-                                            q: keyword,
-                                            sort: localSort,
-                                        });
-                                    }
+                                    if (e.key === "Enter") handleSearch();
                                 }}
                                 className="flex-1 py-2 pl-3 pr-4 text-gray-700 placeholder-gray-400 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
                             <button
-                                onClick={() =>
-                                    router.get(route("indicators.index"), {
-                                        q: keyword,
-                                        sort: localSort,
-                                    })
-                                }
+                                onClick={handleSearch}
                                 className="px-4 py-2 text-white transition-colors bg-blue-900 rounded-r-lg hover:bg-blue-700"
                             >
                                 Cari
@@ -196,20 +179,21 @@ export default function List({ indicators = [], query = "", sort = "" }) {
                     )}
                 </div>
 
+                {/* Pagination */}
                 {indicators.links && (
-                <div className="flex justify-center mt-8 space-x-2">
-                    {indicators.links.map((link, index) => (
-                    <button
-                        key={index}
-                        onClick={() => handlePageClick(link.url)}
-                        disabled={!link.url}
-                        className={`px-3 py-1 border rounded ${
-                        link.active ? "bg-blue-900 text-white" : "text-gray-700"
-                        }`}
-                        dangerouslySetInnerHTML={{ __html: link.label }}
-                    />
-                    ))}
-                </div>
+                    <div className="flex justify-center mt-8 space-x-2">
+                        {indicators.links.map((link, index) => (
+                            <button
+                                key={index}
+                                onClick={() => handlePageClick(link.url)}
+                                disabled={!link.url}
+                                className={`px-3 py-1 border rounded ${
+                                    link.active ? "bg-blue-900 text-white" : "text-gray-700"
+                                }`}
+                                dangerouslySetInnerHTML={{ __html: link.label }}
+                            />
+                        ))}
+                    </div>
                 )}
             </div>
         </AppLayout>
