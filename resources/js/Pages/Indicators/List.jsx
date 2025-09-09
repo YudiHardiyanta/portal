@@ -7,17 +7,23 @@ import Skeletons from "@/Components/Skeletons";
 export default function List({ indicators = [], query = "", sort = "" }) {
     const { auth } = usePage().props;
     const [keyword, setKeyword] = useState(query || "");
-    const [localIndicators, setLocalIndicators] = useState(indicators.data || []);
     const [localSort, setLocalSort] = useState(sort || "");
+    const [localIndicators, setLocalIndicators] = useState(indicators.data || []);
     const [loading, setLoading] = useState(false);
+    const [skipEffect, setSkipEffect] = useState(false);
 
     useEffect(() => {
         setLocalIndicators(indicators.data || []);
     }, [indicators]);
 
     useEffect(() => {
+        if (skipEffect) {
+            setSkipEffect(false);
+            return;
+        }
+
         const delay = setTimeout(() => {
-            if (keyword !== query) {
+            if (keyword !== query || localSort !== sort) {
                 setLoading(true);
                 router.get(
                     route("indicators.index"),
@@ -30,6 +36,7 @@ export default function List({ indicators = [], query = "", sort = "" }) {
                 );
             }
         }, 600);
+
         return () => clearTimeout(delay);
     }, [keyword, localSort]);
 
@@ -49,7 +56,7 @@ export default function List({ indicators = [], query = "", sort = "" }) {
         }
 
         const updatedIndicators = localIndicators.map((item) =>
-            item.var_id === indicator.id
+            item.var_id === indicator.var_id
                 ? {
                       ...item,
                       liked: !item.liked,
@@ -62,23 +69,28 @@ export default function List({ indicators = [], query = "", sort = "" }) {
         setLocalIndicators(updatedIndicators);
 
         if (indicator.liked) {
-            router.delete(route("indicators.unlike", indicator.id), {
+            router.delete(route("indicators.unlike", indicator.var_id), {
                 preserveScroll: true,
                 preserveState: true,
             });
         } else {
-            router.post(route("indicators.like", indicator.id), {}, {
+            router.post(route("indicators.like", indicator.var_id), {}, {
                 preserveScroll: true,
                 preserveState: true,
             });
         }
     };
 
+    const handlePageClick = (url) => {
+        if (!url) return;
+        setSkipEffect(true); 
+        router.get(url, {}, { preserveState: true });
+    };
+    
     return (
         <AppLayout>
             <div className="flex flex-col min-h-screen px-6 py-10">
                 <div className="flex-1">
-                    {/* === Search + Sort === */}
                     <div className="flex flex-col items-center justify-center gap-4 mb-8 md:flex-row">
                         <div className="relative flex w-full md:w-2/3 lg:w-1/2">
                             <input
@@ -124,16 +136,13 @@ export default function List({ indicators = [], query = "", sort = "" }) {
                     </div>
 
                     <h2 className="mb-4 text-2xl font-bold">
-                        {query
-                            ? `Hasil pencarian '${query}'`
-                            : "Semua data indikator"}
+                        {query ? `Hasil pencarian '${query}'` : "Semua data indikator"}
                     </h2>
 
                     {loading && <Skeletons count={5} />}
                     {!loading && (
                         <>
-                            {(!localIndicators ||
-                                localIndicators.length === 0) ? (
+                            {(!localIndicators || localIndicators.length === 0) ? (
                                 <div className="flex flex-col items-center justify-center py-10 text-gray-500">
                                     <p>Tidak ada data ditemukan.</p>
                                 </div>
@@ -144,71 +153,39 @@ export default function List({ indicators = [], query = "", sort = "" }) {
                                             key={item.var_id}
                                             className="flex items-start justify-between pb-4 space-x-4 border-b"
                                         >
-                                            {/* === Kiri === */}
                                             <div>
-                                                <Link
-                                                    href={route("indicators.show", { indicator: item.var_id })}
-                                                >
-                                                    <h3 className="text-lg font-semibold">
-                                                        {item.title}
-                                                    </h3>
+                                                <Link href={route("indicators.show", { indicator: item.var_id })}>
+                                                    <h3 className="text-lg font-semibold">{item.title}</h3>
                                                 </Link>
 
-                                                <p className="text-gray-600">
-                                                    {item.location}
-                                                </p>
+                                                <p className="text-gray-600">{item.location}</p>
 
-                                                {/* Kategori & Subkategori */}
                                                 <div className="flex items-center mt-2 space-x-6 text-sm text-gray-500">
                                                     <span className="flex items-center space-x-1">
-                                                        <Folder
-                                                            size={16}
-                                                            className="text-blue-600"
-                                                        />
-                                                        <span>
-                                                            {item.kategori ||
-                                                                "-"}
-                                                        </span>
+                                                        <Folder size={16} className="text-blue-600" />
+                                                        <span>{item.kategori || "-"}</span>
                                                     </span>
                                                     <span className="flex items-center space-x-1">
-                                                        <Tag
-                                                            size={16}
-                                                            className="text-green-600"
-                                                        />
-                                                        <span>
-                                                            {item.subkategori
-                                                                 ||
-                                                                "-"}
-                                                        </span>
+                                                        <Tag size={16} className="text-green-600" />
+                                                        <span>{item.subkategori || "-"}</span>
                                                     </span>
                                                 </div>
                                             </div>
 
-                                            {/* === Kanan (Like & View) === */}
                                             <div className="flex items-center space-x-4 text-gray-500">
                                                 <button
-                                                    onClick={() =>
-                                                        toggleLike(item)
-                                                    }
+                                                    onClick={() => toggleLike(item)}
                                                     className="flex items-center space-x-1"
                                                 >
                                                     <Heart
                                                         size={18}
-                                                        className={
-                                                            item.liked
-                                                                ? "text-red-500"
-                                                                : "text-gray-400"
-                                                        }
+                                                        className={item.liked ? "text-red-500" : "text-gray-400"}
                                                     />
-                                                    <span className="text-sm">
-                                                        {item.likes_count}
-                                                    </span>
+                                                    <span className="text-sm">{item.likes_count}</span>
                                                 </button>
                                                 <div className="flex items-center space-x-1">
                                                     <Eye size={18} />
-                                                    <span className="text-sm">
-                                                        {item.total_views}
-                                                    </span>
+                                                    <span className="text-sm">{item.total_views}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -220,22 +197,19 @@ export default function List({ indicators = [], query = "", sort = "" }) {
                 </div>
 
                 {indicators.links && (
-                    <div className="flex justify-center mt-8 space-x-2">
-                        {indicators.links.map((link, index) => (
-                            <Link
-                                key={index}
-                                href={link.url || "#"}
-                                className={`px-3 py-1 border rounded ${
-                                    link.active
-                                        ? "bg-blue-900 text-white"
-                                        : "text-gray-700"
-                                }`}
-                                dangerouslySetInnerHTML={{
-                                    __html: link.label,
-                                }}
-                            />
-                        ))}
-                    </div>
+                <div className="flex justify-center mt-8 space-x-2">
+                    {indicators.links.map((link, index) => (
+                    <button
+                        key={index}
+                        onClick={() => handlePageClick(link.url)}
+                        disabled={!link.url}
+                        className={`px-3 py-1 border rounded ${
+                        link.active ? "bg-blue-900 text-white" : "text-gray-700"
+                        }`}
+                        dangerouslySetInnerHTML={{ __html: link.label }}
+                    />
+                    ))}
+                </div>
                 )}
             </div>
         </AppLayout>
