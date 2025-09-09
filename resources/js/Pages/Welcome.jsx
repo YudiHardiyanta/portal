@@ -156,8 +156,6 @@ export default function Welcome({ auth, laravelVersion, phpVersion, token }) {
                             )}
                         </div>
                     </div>
-
-
                 </p>
             </main>
         </AppLayout>

@@ -11,23 +11,38 @@ class IndicatorController extends Controller
     // Menampilkan daftar indikator
     public function index(Request $request)
     {
-        $query = Indicator::query();
+        $query = Indicator::query()
+            ->select('var_id','title','sub_id','subcsa_id')
+            ->with([
+                'kategori:id,name',
+                'subkategori:id,name',
+            ]);
 
         if ($request->q) {
-            $query->where('name', 'like', "%{$request->q}%");
+            $query->where('title', 'like', "%{$request->q}%");
         }
 
         if ($request->sort === 'latest') {
             $query->orderBy('created_at', 'desc');
         } elseif ($request->sort === 'az') {
-            $query->orderBy('name', 'asc');
+            $query->orderBy('title', 'asc');
         } elseif ($request->sort === 'za') {
-            $query->orderBy('name', 'desc');
+            $query->orderBy('title', 'desc');
         }
 
         $indicators = $query->paginate(10)->withQueryString();
 
-        return inertia('Search/Index', [
+        // transform agar hanya nama kategori & subkategori yang dikirim
+        $indicators->getCollection()->transform(function ($indicator) {
+            return [
+                'var_id' => $indicator->var_id,
+                'title' => $indicator->title,
+                'kategori' => $indicator->kategori?->name,
+                'subkategori' => $indicator->subkategori?->name,
+            ];
+        });
+
+        return inertia('Indicators/List', [
             'indicators' => $indicators,
             'query' => $request->q,
             'sort' => $request->sort,

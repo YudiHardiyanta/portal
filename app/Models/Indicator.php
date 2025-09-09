@@ -8,18 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Indicator extends Model
 {
+    protected $primaryKey = 'var_id';
     protected $fillable = [
-        'name',
-        'description',
-        'location',
-        'total_views',
+       'var_id','title', 'sub_id', 'subcsa_id', 'def', 'notes', 'unit','total_views'
     ];
 
     protected $appends = ['is_liked', 'likes_count'];
 
+
     public function likes()
     {
-        return $this->hasMany(IndicatorLike::class);
+        return $this->hasMany(IndicatorLike::class, 'indicator_id', 'var_id');
     }
 
     public function getIsLikedAttribute()
@@ -33,5 +32,15 @@ class Indicator extends Model
     public function getLikesCountAttribute()
     {
         return $this->likes()->count();
+    }
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class, 'sub_id');
+    }
+
+    public function subkategori()
+    {
+        return $this->belongsTo(Subkategori::class, 'subcsa_id');
     }
 }

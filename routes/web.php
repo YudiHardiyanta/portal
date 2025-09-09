@@ -1,6 +1,4 @@
 <?php
-
-
 use Inertia\Inertia;
 use App\Helpers\JwtHelper;
 use Illuminate\Support\Facades\Route;

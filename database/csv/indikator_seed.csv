@@ -1,0 +1,300 @@
+var_id,title,sub_id,subcsa_id,def,notes,unit
+1,"Inflasi Tahunan Kota Denpasar, Singaraja, dan Nasional",3,536,,"Diolah dari Hasil Survei Harga Konsumen, BPS",Persen
+47,Inflasi Tahunan Kota Singaraja Menurut 7 Kelompok Pengeluaran,3,536,,,Persen
+65,Inflasi Tahunan Kota Denpasar Menurut 7 Kelompok Pengeluaran,3,536,,,Persen
+314,"Inflasi Bulanan Kota Denpasar, Singaraja, dan Nasional",3,536,,,Persen
+362,"Indeks Harga Konsumen (IHK) Bulanan Kota Denpasar, Singaraja, dan Nasional",3,536,,,
+374,Inflasi Tahunan Kota Singaraja Menurut 11 Kelompok Pengeluaran,3,536,,,Persen
+375,Inflasi Tahunan Kota Denpasar Menurut 11 Kelompok Pengeluaran,3,536,,,Persen
+402,Inflasi Bulanan (month to month) Provinsi Bali,3,536,,"Sumber: Survei harga Konsumen, BPS.",Persen
+405,Indeks Harga Konsumen (IHK) Bulanan Provinsi Bali,3,536,,"Sumber: Survei Harga Konsumen, BPS.",
+407,Inflasi y-o-y (year on year) Provinsi Bali,3,536,,"Sumber: Survei harga Konsumen, BPS.",Persen
+319,Indeks Kemahalan Konstruksi Menurut Kabupaten/Kota di Provinsi Bali,4,559,,"Sumber: Survei Harga Kemahalan Konstruksi, BPS Provinsi Bali.",
+380,Banyaknya Perusahaan Konstruksi Aktif Menurut Kabupaten/Kota di Provinsi Bali,4,559,Sumber:  Badan Pusat Statistik Provinsi Bali,,Unit
+38,Rata-rata Konsumsi per Kapita Sebulan Provinsi Bali Menurut Kabupaten/Kota,5,523,,Sumber: Survei Sosial Ekonomi Nasional (Susenas).,Rupiah
+40,Distribusi Pendapatan Provinsi Bali Menurut Kelompok Pendapatan dan Kabupaten/Kota,5,523,,Sumber: Survei Sosial Ekonomi Nasional (Susenas).,Persen
+300,Rata-rata Konsumsi Kalori per Kapita Sehari Menurut Kelompok Bahan Makanan Provinsi Bali,5,523,,Sumber: Survei Sosial Ekonomi Nasional (Susenas).,KKal
+301,Rata-rata Konsumsi Protein per Kapita Sehari Menurut Kelompok Bahan Makanan Provinsi Bali,5,523,,Sumber: Survei Sosial Ekonomi Nasional (Susenas).,gram
+303,Rata-rata Pengeluaran per Kapita Sebulan Menurut Kelompok Bahan Makanan Provinsi Bali,5,523,,Sumber: Survei Sosial Ekonomi Nasional (Susenas).,Rupiah
+305,Rata-rata Pengeluaran per Kapita Sebulan Menurut Kelompok Bukan Makanan Provinsi Bali,5,523,,Sumber: Survei Sosial Ekonomi Nasional (Susenas).,Rupiah
+123,Penduduk Angkatan Kerja Provinsi Bali Menurut Kabupaten/Kota,6,520,,"Data ketenagakerjaan kabupaten/kota 2016 tidak rilis dikarenakan keterbatasan jumlah sampel.
+Sumber: Survei Angkatan Kerja Nasional (Sakernas) - Agustus.
+",Orang
+210,Penduduk Usia 15 Tahun ke Atas yang Bekerja Menurut Kelompok Umur dan Jenis Kelamin di Provinsi Bali,6,520,,"Sumber: Survei Angkatan Kerja Nasional (Sakernas) - Agustus.
+",Orang
+283,Penduduk Usia Kerja Provinsi Bali Menurut Kabupaten/Kota,6,520,,"Data ketenagakerjaan kabupaten/kota 2016 tidak rilis dikarenakan keterbatasan jumlah sampel.
+Sumber: Survei Angkatan Kerja Nasional (Sakernas) - Agustus.
+",Orang
+284,Penduduk Usia 15 Tahun ke Atas yang Bekerja Provinsi Bali Menurut Kabupaten/Kota,6,520,,"Regency/Municipality employment data in 2016 is not released due to the limited number of samples.
+Source: National Labor Force Survey (Sakernas) - August.
+",Orang
+285,Banyaknya Pengangguran Provinsi Bali Menurut Kabupaten/Kota,6,520,,"Data ketenagakerjaan kabupaten/kota 2016 tidak rilis dikarenakan keterbatasan jumlah sampel.
+Sumber: Survei Angkatan Kerja Nasional (Sakernas) - Agustus.
+",
+286,Penduduk Bukan Angkatan Kerja Provinsi Bali Menurut Kabupaten/Kota,6,520,,"Data ketenagakerjaan kabupaten/kota 2016 tidak rilis dikarenakan keterbatasan jumlah sampel.
+Sumber: Survei Angkatan Kerja Nasional (Sakernas) - Agustus.
+",Orang
+287,Tingkat Partisipasi Angkatan Kerja Provinsi Bali Menurut Kabupaten/Kota,6,520,,"Data ketenagakerjaan kabupaten/kota 2016 tidak rilis dikarenakan keterbatasan jumlah sampel.
+Sumber: Survei Angkatan Kerja Nasional (Sakernas) - Agustus.
+",Persen
+288,Persentase Pengangguran Provinsi Bali Menurut Kabupaten/Kota,6,520,,"Data ketenagakerjaan kabupaten/kota 2016 tidak rilis dikarenakan keterbatasan jumlah sampel.
+Sumber: Survei Angkatan Kerja Nasional (Sakernas) - Agustus.
+",Persen
+291,Penduduk Usia 15 Tahun ke Atas yang Bekerja Menurut Lapangan Usaha (9 Sektor) dan Jenis Kelamin di Provinsi Bali,6,520,,Sumber: Survei Angkatan Kerja Nasional (Sakernas) - Agustus.,Orang
+293,Penduduk Usia 15 Tahun ke Atas yang Bekerja Menurut Jumlah Jam Kerja Seluruhnya dan Jenis Kelamin di Provinsi Bali,6,520,,Sumber: Survei Angkatan Kerja Nasional (Sakernas) - Agustus.,Orang
+296,Penduduk Usia 15 Tahun ke Atas yang Bekerja Menurut Status Pekerjaan Utama dan Jenis Kelamin di Provinsi Bali,6,520,,Sumber: Survei Angkatan Kerja Nasional (Sakernas) - Agustus.,Orang
+297,Penduduk Usia 15 Tahun ke Atas yang Bekerja Menurut Jenis Pekerjaan/Jabatan Dalam Pekerjaan Utama di Provinsi Bali,6,520,,Sumber: Survei Angkatan Kerja Nasional (Sakernas) - Agustus.,Orang
+299,Penduduk Usia 15 Tahun ke Atas Menurut Pendidikan Tertinggi yang Ditamatkan dan Jenis Kelamin di Provinsi Bali,6,521,,Sumber: Survei Angkatan Kerja Nasional (Sakernas) - Agustus.,Orang
+318,Tingkat Pengangguran Terbuka dan Tingkat Partisipasi Angkatan Kerja Provinsi Bali,6,520,,,Persen
+345,Penduduk Usia 15 Tahun ke Atas yang Bekerja Menurut Lapangan Usaha (17 Kategori) dan Jenis Kelamin di Provinsi Bali,6,520,,Sumber: Survei Angkatan Kerja Nasional (Sakernas) - Agustus.,Orang
+93,Jumlah Listrik Terjual Menurut Area Pelayanan di Provinsi Bali,7,558,,,MWh
+94,Banyaknya Pelanggan Air Bersih Menurut Kabupaten/Kota di Provinsi Bali,7,558,,,
+239,"Banyaknya Desa Berlistrik, Gardu Distribusi, Pelanggan, dan Daya Tersambung di Provinsi Bali",7,558,,,
+235,Ekspor Impor Tahunan Provinsi Bali,8,535,,,US$
+236,Nilai Ekspor Provinsi Bali Menurut Kawasan Tujuan,8,535,,,Ribu US$
+238,Nilai Impor Provinsi Bali Menurut Kawasan Asal,8,535,,,Ribu US$
+316,Ekspor Impor Bulanan Provinsi Bali,8,535,,,US$
+423,Jumlah Usaha/Perusahaan Industri Pengolahan Mikro dan Kecil Menurut Kabupaten/Kota di Provinsi Bali,9,559,"Sumber: Badan Pusat Statistik Provinsi Bali, Survei Industri Mikro Kecil Tahunan
+",,Unit
+424,Jumlah Pekerja Usaha/Perusahaan Industri Pengolahan Mikro dan Kecil Menurut Kabupaten/Kota di Provinsi Bali,9,559,"Sumber: Badan Pusat Statistik Provinsi Bali, Survei Industri Mikro Kecil Tahunan",,Orang
+425,Jumlah Usaha/Perusahaan Industri Pengolahan Mikro dan Kecil menurut Kode Klasifikasi Baku Lapangan Usaha di Provinsi Bali,9,559,"Sumber: Badan Pusat Statistik Provinsi Bali, Survei Industri Mikro Kecil Tahunan",,Unit
+427,Jumlah Usaha/Perusahaan Industri Pengolahan Mikro dan Kecil menurut Kode Klasifikasi Baku Lapangan Usaha Indonesia dan Besaran Pendapatan Setahun di Provinsi Bali,9,559,"Sumber: Badan Pusat Statistik Provinsi Bali, Survei Industri Mikro Kecil Tahunan",,Unit
+429,Jumlah Pekerja Industri Pengolahan Mikro dan Kecil menurut Kode Klasifikasi Baku Lapangan Usaha di Provinsi Bali,9,559,"Sumber: Badan Pusat Statistik Provinsi Bali, Survei Industri Mikro Kecil Tahunan",,Orang
+28,Proyeksi Penduduk Provinsi Bali Menurut Jenis Kelamin dan Kabupaten/Kota,12,519,,Data proyeksi 2010-2014 berdasarkan Sensus Penduduk (SP) 2010; Data proyeksi 2015-2019 berdasarkan Survei Penduduk Antar Sensus (SUPAS) 2015.,Ribu Jiwa
+184,Proyeksi Penduduk Provinsi Bali Menurut Kelompok Umur,12,519,,"Data proyeksi 2010-2014 berdasarkan Sensus Penduduk (SP) 2010; Data proyeksi 2015-2019 berdasarkan Survei Penduduk Antar Sensus (SUPAS) 2015; Data 2020 berdasarkan Sensus Penduduk (SP2020), Data proyeksi 2021-2024 berdasarkan Long Form Sensus Penduduk 2020.",Ribu Jiwa
+190,Rata-Rata Anak Lahir Hidup (ALH) Provinsi Bali per Wanita Usia Subur (WUS) dan Kelompok Umur,12,522,,"Rata-rata ALH adalah jumlah seluruh anak yang dilahirkan hidup dari wanita usia subur (WUS) dibagi dengan jumlah wanita usia subur. &lt;br/&gt;
+Sumber: BPS Provinsi Bali",Jiwa
+192,Rasio Ibu Anak Provinsi Bali Menurut Kabupaten/Kota,12,519,,CWR menunjukkan jumlah anak balita untuk setiap 1000 wanita usia subur (WUS).,
+414,Proyeksi Penduduk Provinsi Bali Menurut Kabupaten/Kota dan Jenis Kelamin,12,519,,"Data 2020 berdasarkan Sensus Penduduk (SP2020), Data proyeksi 2021-2024 berdasarkan Long Form Sensus Penduduk 2020.",Ribu Jiwa
+61,Upah Minimum Kabupaten/Kota di Provinsi Bali,13,537,,Sumber: Dinas Tenaga Kerja dan Energi Sumber Daya Mineral Provinsi Bali,Rupiah
+96,Ringkasan Anggaran Pendapatan dan Belanja Daerah (APBD) Provinsi Bali,13,534,,"Sumber: Survei Statistik Keuangan Daerah, BPS Provinsi Bali.",Ribu Rupiah
+242,Kurs Tengah Berberapa Valuta Asing Terhadap Rupiah di Provinsi Bali,13,562,,,Rupiah
+244,Pendapatan Asli Daerah (PAD) Kabupaten/Kota di Provinsi Bali,13,534,,"Sumber: Survei Statistik Keuangan Daerah, BPS Provinsi Bali.",Ribu Rupiah
+245,Penerimaan Anggaran Pendapatan dan Belanja Daerah (APBD) Kabupaten/Kota di Provinsi Bali,13,534,,"Sumber: Survei Statistik Keuangan Daerah, BPS Provinsi Bali.",Ribu Rupiah
+246,Realisasi Penanaman Modal Dalam Negeri di Provinsi Bali Menurut Kabupaten/Kota,13,534,Data 2024 merupakan kumulatif hingga triwulan III-2024. Sumber: Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu Provinsi Bali.,,Juta Rupiah
+247,Realisasi Penanaman Modal Asing di Provinsi Bali Menurut Kabupaten/Kota,13,535,Data 2024 merupakan kumulatif hingga triwulan III-2024. Sumber: Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu Provinsi Bali.,,Juta Rupiah
+106,Banyaknya Wisatawan Mancanegara Bulanan ke Bali Menurut Pintu Masuk,16,561,,Sumber: BPS Provinsi Bali,Orang
+129,Banyaknya Wisatawan Mancanegara ke Bali Menurut Kawasan,16,561,,,Orang
+222,Banyaknya Hotel Bintang Menurut Kelas dan Kabupaten/Kota di Provinsi Bali,16,561,,Sumber :  Badan Pusat Statistik Provinsi Bali,
+223,Banyaknya Kamar pada Hotel Bintang Menurut Kelas dan Kabupaten/Kota di Provinsi Bali,16,561,,"Sumber: Survei Hotel Tahunan (VHTL), BPS Provinsi Bali",
+224,Banyaknya Kamar pada Hotel Non Bintang dan Akomodasi Lainnya,16,561,,Sumber :  Badan Pusat Statistik Provinsi Bali,
+227,Rata-Rata Lama Menginap Tamu Asing dan Domestik pada Hotel Bintang Menurut Kelas dan Bulan di Provinsi Bali,16,561,,"Sumber: Survei Hotel Bulanan (VHTS), BPS Provinsi Bali",Malam
+228,Rata-Rata Lama Menginap Tamu Domestik pada Hotel Bintang Menurut Kelas dan Bulan di Provinsi Bali,16,561,,"Sumber: Survei Hotel Bulanan (VHTS), BPS Provinsi Bali",Malam
+229,Rata-Rata Lama Menginap Tamu Asing pada Hotel Bintang Menurut Kelas dan Bulan di Provinsi Bali,16,561,,"Sumber: Survei Hotel Bulanan (VHTS), BPS Provinsi Bali",Malam
+230,Tingkat Penghunian Kamar (TPK) Hotel Bintang Menurut Kelas di Provinsi Bali,16,561,,"Sumber: Survei Hotel Bulanan (VHTS), BPS Provinsi Bali",Persen
+306,Tingkat Penghunian Kamar (TPK) Hotel Non Bintang Menurut Kabupaten/Kota di Provinsi Bali,16,561,,"Sumber: Survei Hotel Bulanan (VHTS), BPS Provinsi Bali",Persen
+307,Rata-Rata Lama Menginap Tamu Asing pada Hotel Non Bintang dan Akomodasi Lainnya Menurut Kabupaten/Kota dan Bulan di Provinsi Bali,16,561,,"Sumber: Survei Hotel Bulanan (VHTS), BPS Provinsi Bali",Malam
+308,Rata-Rata Lama Menginap Tamu Domestik pada Hotel Non Bintang dan Akomodasi Lainnya Menurut Kabupaten/Kota dan Bulan di Provinsi Bali,16,561,,"Sumber: Survei Hotel Bulanan (VHTS), BPS Provinsi Bali",Malam
+309,Rata-Rata Lama Menginap Tamu Asing dan Domestik pada Hotel Non Bintang dan Akomodasi Lainnya Menurut Kabupaten/Kota dan Bulan di Provinsi Bali,16,561,,"Sumber: Survei Hotel Bulanan (VHTS), BPS Provinsi Bali",Malam
+311,Banyaknya Hotel Non Bintang dan Akomodasi Lainnya Menurut Kelompok Kamar dan Kabupaten/Kota di Provinsi Bali,16,561,,"Sumber: Survei Hotel Tahunan (VHTL), BPS Provinsi Bali",
+312,Banyaknya Tempat Tidur pada Hotel Bintang Menurut Kelas dan Kabupaten/Kota di Provinsi Bali,16,561,,"Sumber: Survei Hotel Tahunan (VHTL), BPS Provinsi Bali",
+313,Banyaknya Tempat Tidur pada Hotel Non Bintang dan Akomodasi Lainnya Menurut Kelompok Kamar dan Kabupaten/Kota di Provinsi Bali,16,561,,"Sumber: Survei Hotel Tahunan (VHTL), BPS Provinsi Bali",
+385,Banyaknya Restoran dan Rumah Makan Dirinci Menurut Kabupaten/Kota di Bali,16,561,,Sumber: Dinas Pariwisata Provinsi Bali,Unit
+386,Banyaknya Tempat Duduk Restoran dan Rumah Makan Dirinci Menurut Kabupaten/Kota di Provinsi Bali,16,561,,Sumber: Dinas Pariwisata Provinsi Bali,Unit
+387,Banyaknya Biro Perjalanan Wisata Menurut Kabupaten/Kota,16,561,,Sumber: Dinas Pariwisata Provinsi Bali,Unit
+412,Jumlah Perjalanan Wisatawan Nusantara Menurut Kabupaten/Kota Asal,16,561,,"Sumber: BPS Provinsi Bali, Data berbasis Mobile Positioning Data (MPD).",Perjalanan
+413,Jumlah Perjalanan Wisatawan Nusantara Menurut Kabupaten/Kota Tujuan,16,561,,"Sumber: BPS Provinsi Bali, Data berbasis Mobile Positioning Data (MPD).",Perjalanan
+248,Banyaknya Kendaraan Menurut Kabupaten/Kota di Provinsi Bali,17,560,Tidak termasuk jenis kendaraan khusus/lainnya dan kendaraan yang tidak terpetakan.,Sumber data: 1996-2021: Badan Pendapatan Provinsi Bali. Sejak 2022: Polda Bali.,Unit
+249,Banyaknya Sepeda Motor Menurut Kabupaten/Kota di Provinsi Bali,17,560,Tidak termasuk jenis kendaraan khusus/lainnya dan kendaraan yang tidak terpetakan.,Sumber data: 1996-2021: Badan Pendapatan Provinsi Bali. Sejak 2022: Polda Bali.,Unit
+250,Banyaknya Kendaraan Menurut Jenisnya di Provinsi Bali,17,560,Tidak termasuk jenis kendaraan khusus/lainnya dan kendaraan yang tidak terpetakan.,Sumber data: 1996-2021: Badan Pendapatan Provinsi Bali. Sejak 2022: Polda Bali.,Unit
+251,Banyaknya Kecelakaan Lalu Lintas di Provinsi Bali,17,560,,Sumber: Kepolisian Daerah Bali,
+253,Jumlah Penumpang Tiba di Pelabuhan di Provinsi Bali,17,560,,"Sumber: Dinas Perhubungan Provinsi Bali
+Source: Transportation Department of Bali Province
+",Orang
+259,Banyaknya Penerbangan dan Penumpang di Provinsi Bali,17,560,,Sumber: Kantor Otoritas Bandar Udara Wilayah IV,
+430,Jumlah Kendaraan Listrik Menurut Jenis Kendaraan dan  Kabupaten/Kota di Provinsi Bali,17,560,Sumber: Direktorat Lalu Lintas Polda Bali,,Unit
+117,Nilai Tukar Petani Provinsi Bali,22,536,,,
+167,Nilai Tukar Petani Provinsi Bali Menurut Subsektor,22,536,,,
+41,Gini Rasio Provinsi Bali Menurut Kabupaten/Kota,23,563,,Sumber: Survei Sosial Ekonomi Nasional.,
+54,Jumlah Penduduk Miskin Provinsi Bali Menurut Klasifikasi Daerah,23,563, ,"Sejak 2011 angka kemiskinan provinsi dirilis dua kali dalam setahun, yakni periode Maret dan September.
+Sumber: Survei Sosial Ekonomi Nasional.",Ribu Jiwa
+66,Indeks Kedalaman Kemiskinan Provinsi Bali Menurut Klasifikasi Daerah,23,563,,"Sejak 2011 angka kemiskinan provinsi dirilis dua kali dalam setahun, yakni periode Maret dan September.
+Sumber: Survei Sosial Ekonomi Nasional.",
+70,Persentase Penduduk Miskin Provinsi Bali Menurut Klasifikasi Daerah,23,563,,"Sejak 2011 angka kemiskinan provinsi dirilis dua kali dalam setahun, yakni periode Maret dan September. Sumber: Survei Sosial Ekonomi Nasional.",Persen
+125,Persentase Penduduk Miskin Provinsi Bali Menurut Kabupaten/Kota,23,563,,Sumber: Survei Sosial Ekonomi Nasional,
+197,Garis Kemiskinan Provinsi Bali Menurut Kabupaten/Kota,23,563,,Berdasarkan hasil Survei Sosial Ekonomi Nasional - Maret,Rupiah
+199,Indeks Kedalaman Kemiskinan Provinsi Bali Menurut Kabupaten/Kota,23,563,,Sumber: Survei Sosial Ekonomi Nasional,
+260,Indeks Keparahan Kemiskinan Provinsi Bali Menurut Kabupaten/Kota,23,563,,Sumber: Survei Sosial Ekonomi Nasional,
+261,Jumlah Penduduk Miskin Provinsi Bali Menurut Kabupaten/Kota,23,563,,Sumber: Survei Sosial Ekonomi Nasional,Ribu Jiwa
+262,Indeks Keparahan Kemiskinan Provinsi Bali Menurut Klasifikasi Daerah,23,563,,"Sejak 2011 angka kemiskinan provinsi dirilis dua kali dalam setahun, yakni periode Maret dan September.
+Sumber: Survei Sosial Ekonomi Nasional.",
+263,Garis Kemiskinan Makanan Provinsi Bali Menurut Klasifikasi Daerah,23,563,,"Sejak 2011 angka kemiskinan provinsi dirilis dua kali dalam setahun, yakni periode Maret dan September.
+Sumber: Survei Sosial Ekonomi Nasional.
+",Rupiah
+264,Garis Kemiskinan Non Makanan Provinsi Bali Menurut Klasifikasi Daerah,23,563,,"Sejak 2011 angka kemiskinan provinsi dirilis dua kali dalam setahun, yakni periode Maret dan September.
+Sumber: Survei Sosial Ekonomi Nasional.
+
+",Rupiah
+265,Garis Kemiskinan Provinsi Bali Menurut Klasifikasi Daerah,23,563,,"Sejak 2011 angka kemiskinan provinsi dirilis dua kali dalam setahun, yakni periode Maret dan September.
+Sumber: Survei Sosial Ekonomi Nasional.
+
+",Rupiah
+320,Gini Rasio Provinsi Bali Menurut Klasifikasi Daerah,23,563,,Sumber: Survei Sosial Ekonomi Nasional.,
+188,Produksi Daging Ternak Provinsi Bali Menurut Kabupaten/Kota,24,557,,Sumber: Dinas Pertanian dan Ketahanan Pangan Provinsi Bali.,Ton
+206,Produksi Daging Unggas Provinsi Bali Menurut Kabupaten/Kota,24,557,,Sumber: Dinas Pertanian dan Ketahanan Pangan Provinsi Bali.,Ton
+208,Produksi Telur Unggas Provinsi Bali Menurut Kabupaten/Kota,24,557,,Sumber: Dinas Pertanian dan Ketahanan Pangan Provinsi Bali.,Ton
+30,Indeks Pembangunan Manusia Provinsi Bali Menurut Kabupaten/Kota,26,563,,Sumber : Badan Pusat Statistik,
+358,Umur Harapan Hidup Saat Lahir Provinsi Bali Menurut Kabupaten/Kota,26,522,,Sumber : Badan Pusat Statistik,Tahun
+359,Harapan Lama Sekolah Provinsi Bali Menurut Kabupaten/Kota,26,521,,Sumber : Badan Pusat Statistik,Tahun
+360,Rata-Rata Lama Sekolah Provinsi Bali Menurut Kabupaten/Kota,26,521,,Sumber : Badan Pusat Statistik,Tahun
+361,Rata-rata Pengeluaran Per Kapita Disesuaikan Provinsi Bali Menurut Kabupaten/Kota,26,523,,Sumber : Badan Pusat Statistik,Ribu Rupiah
+400,[Metode Baru] Umur Harapan Hidup Saat Lahir (UHH) Menurut Kabupaten/Kota di Provinsi Bali Hasil Long Form SP2020,26,522,Keterangan Metode Baru: Sumber data umur harapan hidup saat lahir menggunakan hasil Long Form SP2020 (LF SP2020).,Sumber: Badan Pusat Statistik,Tahun
+401,[Metode Baru] Indeks Pembangunan Manusia menurut Menurut Kabupaten/Kota di Provinsi Bali (Umur Harapan Hidup Hasil Long Form SP2020),26,563,Keterangan: Menggunakan Indikator Usia Harapan Hidup yang berdasarkan hasil Long Form Sensus Penduduk 2020 (LF SP2020).,Sumber: Badan Pusat Statistik,
+71,Angka Melek Huruf Provinsi Bali Menurut Kabupaten/Kota dan Jenis Kelamin,28,521,,,Persen
+79,Angka Partisipasi Murni (APM) Provinsi Bali Menurut Jenjang Pendidikan dan Jenis Kelamin,28,521,,Sumber: Survei Sosial Ekonomi Nasional (Susenas).,Persen
+82,Angka Partisipasi Kasar (APK) Provinsi Bali Menurut Jenjang Pendidikan dan Jenis Kelamin,28,521,,Sumber: Survei Sosial Ekonomi Nasional (Susenas),Persen
+83,Angka Partisipasi Sekolah (APS) Provinsi Bali Menurut Jenjang Pendidikan dan Jenis Kelamin,28,521,,Sumber: Survei Sosial Ekonomi Nasional (Susenas).,Persen
+85,Banyaknya Sekolah Taman Kanak-kanak/Sederajat Provinsi Bali Menurut Kabupaten/Kota,28,521,"Tahun merupakan Tahun Ajaran. Contoh: Tahun 2015 Merupakan Tahun Ajaran 2015/2016.
+Sejak 2017 termasuk Raudhatul Athfal",Sumber: Kementerian Pendidikan dan Kementerian Agama.,
+87,Banyaknya Guru Taman Kanak-kanak/Sederajat Provinsi Bali Menurut Kabupaten/Kota,28,521,Tahun merupakan Tahun Ajaran. Contoh: Tahun 2015 Merupakan Tahun Ajaran 2015/2016. Sejak 2017 termasuk Raudhatul Athfal.,Sumber: Kementerian Pendidikan dan Kementerian Agama.,
+88,Banyaknya Murid Taman Kanak-kanak/Sederajat Provinsi Bali Menurut Kabupaten/Kota,28,521,Tahun merupakan Tahun Ajaran. Contoh: Tahun 2015 Merupakan Tahun Ajaran 2015/2016. Sejak 2017 termasuk Raudhatul Athfal.,Sumber: Kementerian Pendidikan dan Kementerian Agama.,
+267,Persentase Penduduk Usia 15 Tahun ke Atas Menurut Pendidikan Tertinggi yang Ditamatkan dan Kabupaten/Kota di Bali,28,521,,Sumber: Survei Sosial Ekonomi Nasional (Susenas).,Persen
+268,Banyaknya Guru Sekolah Dasar/Sederajat Provinsi Bali Menurut Kabupaten/Kota,28,521,Tahun merupakan Tahun Ajaran. Contoh: Tahun 2015 Merupakan Tahun Ajaran 2015/2016. Sejak 2011 termasuk Madrasah Ibtidaiyah,Sumber: Kementerian Pendidikan dan Kementerian Agama.,
+269,Banyaknya Guru Sekolah Lanjutan Pertama/Sederajat Provinsi Bali Menurut Kabupaten/Kota,28,521,Tahun merupakan Tahun Ajaran. Contoh: Tahun 2015 Merupakan Tahun Ajaran 2015/2016. Sejak 2011 termasuk Madrasah Tsanawiyah.,Sumber: Kementerian Pendidikan dan Kementerian Agama.,
+270,Banyaknya Guru Sekolah Menengah Atas/Sederajat Provinsi Bali Menurut Kabupaten/Kota,28,521,Tahun merupakan Tahun Ajaran. Contoh: Tahun 2015 Merupakan Tahun Ajaran 2015/2016. Sejak 2011 termasuk Madrasah Aliyah.,Sumber: Kementerian Pendidikan dan Kementerian Agama. ,
+271,Banyaknya Guru Sekolah Menengah Kejuruan Provinsi Bali Menurut Kabupaten/Kota,28,521,Tahun merupakan Tahun Ajaran. Contoh: Tahun 2015 Merupakan Tahun Ajaran 2015/2016. ,Sumber: Kementerian Pendidikan.,
+272,Banyaknya Murid Sekolah Dasar/Sederajat Provinsi Bali Menurut Kabupaten/Kota,28,521,Tahun merupakan Tahun Ajaran. Contoh: Tahun 2015 Merupakan Tahun Ajaran 2015/2016. Sejak 2011 termasuk Madrasah Ibtidaiyah.,Sumber: Kementerian Pendidikan dan Kementerian Agama.,
+273,Banyaknya Murid Sekolah Lanjutan Pertama/Sederajat Provinsi Bali Menurut Kabupaten/Kota,28,521,Tahun merupakan Tahun Ajaran. Contoh: Tahun 2015 Merupakan Tahun Ajaran 2015/2016. Sejak 2011 termasuk Madrasah Tsanawiyah.,Sumber: Kementerian Pendidikan dan Kementerian Agama.,
+274,Banyaknya Murid Sekolah Menengah Atas/Sederajat Provinsi Bali Menurut Kabupaten/Kota,28,521,Tahun merupakan Tahun Ajaran. Contoh: Tahun 2015 Merupakan Tahun Ajaran 2015/2016. Sejak 2011 termasuk Madrasah Aliyah.,Sumber: Kementerian Pendidikan dan Kementerian Agama.,
+275,Banyaknya Murid Sekolah Menengah Kejuruan Provinsi Bali Menurut Kabupaten/Kota,28,521,Tahun merupakan Tahun Ajaran. Contoh: Tahun 2015 Merupakan Tahun Ajaran 2015/2016. ,Sumber: Kementerian Pendidikan.,
+276,Banyaknya Sekolah Dasar/Sederajat Provinsi Bali Menurut Kabupaten/Kota,28,521,Tahun merupakan Tahun Ajaran. Contoh: Tahun 2015 Merupakan Tahun Ajaran 2015/2016. Sejak 2011 termasuk Madrasah Ibtidaiyah,Sumber: Kementerian Pendidikan dan Kementerian Agama.,
+277,Banyaknya Sekolah Lanjutan Pertama/Sederajat Provinsi Bali Menurut Kabupaten/Kota,28,521,Tahun merupakan Tahun Ajaran. Contoh: Tahun 2015 Merupakan Tahun Ajaran 2015/2016. Sejak 2011 termasuk Madrasah Tsanawiyah.,Sumber: Kementerian Pendidikan dan Kementerian Agama.,
+278,Banyaknya Sekolah Menengah Atas Provinsi Bali Menurut Kabupaten/Kota,28,521,Tahun merupakan Tahun Ajaran. Contoh: Tahun 2015 Merupakan Tahun Ajaran 2015/2016. Sejak 2011 termasuk Madrasah Aliyah.,Sumber: Kementerian Pendidikan dan Kementerian Agama.,
+279,Banyaknya Sekolah Menengah Kejuruan Provinsi Bali Menurut Kabupaten/Kota,28,521,Tahun merupakan Tahun Ajaran. Contoh: Tahun 2015 Merupakan Tahun Ajaran 2015/2016. ,Sumber: Kementerian Pendidikan.,
+280,Angka Partisipasi Kasar (APK) Provinsi Bali Menurut Jenjang Pendidikan dan Kabupaten/Kota,28,521,,Sumber: Survei Sosial Ekonomi Nasional (Susenas).,Persen
+281,Angka Partisipasi Murni (APM) Provinsi Bali Menurut Jenjang Pendidikan dan Kabupaten/Kota,28,521,,Sumber: Survei Sosial Ekonomi Nasional (Susenas).,Persen
+282,Angka Partisipasi Sekolah (APS) Provinsi Bali Menurut Jenjang Pendidikan dan Kabupaten/Kota,28,521,,Sumber: Survei Sosial Ekonomi Nasional (Susenas).,Persen
+388,Persentase Penduduk yang Mempunyai Keluhan Kesehatan Selama Sebulan Terakhir Menurut Kabupaten/Kota di Bali,30,522,"Sumber: Survei Sosial Ekonomi Nasional (Susenas), BPS Provinsi Bali",,Persen
+389,Persentase Penduduk yang Mempunyai Keluhan Kesehatan dan Berobat Jalan Selama Sebulan Terakhir Menurut Kabupaten/Kota di Bali,30,522,"Sumber: Survei Sosial Ekonomi Nasional (Susenas), BPS Provinsi Bali",,Persen
+390,"Jumlah Bayi Lahir, Bayi Berat Badan Lahir Rendah (BBLR), dan Bergizi Kurang Menurut Kabupaten/Kota di Bali",30,522,Sumber: Dinas Kesehatan Provinsi Bali,,Jiwa
+391,Persentase Penduduk 5 Tahun ke Atas yang Merokok Tembakau selama Sebulan Terakhir Menurut Kabupaten/Kota dan Kebiasaan Merokok,30,522,"Sumber: Survei Sosial Ekonomi Nasional (Susenas), BPS Provinsi Bali",,Persen
+421,Persentase Rumah Tangga yang Memiliki Akses Terhadap Sanitasi Layak Menurut Kabupaten/Kota di Provinsi Bali,30,525,"Sumber:  BPS Provinsi Bali, Survei Sosial Ekonomi Nasional (Susenas) Maret",,Persen
+422,Persentase Rumah Tangga yang Memiliki Akses Terhadap Sumber Air Minum Layak Menurut Kabupaten/Kota di Provinsi Bali,30,525,"Sumber: BPS Provinsi Bali, Survei Sosial Ekonomi Nasional (Susenas) Maret
+",,Persen
+377,Indeks Demokrasi Provinsi Bali Menurut Aspek,34,528,,,
+378,Indeks Demokrasi Provinsi Bali Menurut Variabel,34,528,,,
+381,Indeks Demokrasi Provinsi Bali Menurut Aspek (Metode Baru),34,528,,,
+393,Banyaknya Produk DPRD Provinsi Bali,34,528,Sumber: Dewan Perwakilan Rakyat Daerah Provinsi Bali,,
+394,Banyaknya Tindak Pidana Menonjol Menurut Jenisnya di Provinsi Bali,34,526,Sumber: Kepolisian Daerah Bali,,Kasus
+134,Indeks Pemberdayaan Gender (IDG) Provinsi Bali Menurut Kabupaten/Kota,40,564,"Indeks Pemberdayaan Gender
+merupakan indeks komposit yang
+tersusun dari beberapa variabel yang mencerminkan tingkat keterlibatan wanita dalam proses pengambilan keputusan dibidang politik dan ekonomi.",,
+177,Persentase Keterlibatan Perempuan Dalam Parlemen di Provinsi Bali Menurut Kabupaten/Kota,40,564,,,Persen
+178,Persentase Keterlibatan Perempuan Sebagai Tenaga Profesional di Provinsi Bali Menurut Kabupaten/Kota,40,564,,,Persen
+181,Persentase Sumbangan Pendapatan Perempuan Provinsi Bali Menurut Kabupaten/Kota,40,564,,,Persen
+395,Indeks Ketimpangan Gender (IKG) Provinsi Bali Menurut Kabupaten/Kota,40,564,,Sumber: BPS Provinsi Bali,
+396,Proporsi Perempuan Pernah Kawin Usia 15-49 Tahun yang Melahirkan Anak Lahir Hidup Yang Pertama Kali Berumur Kurang dari 20 Tahun (MHPK20),40,564,Keterangan: proporsi per 1.000 perempuan usia 15-49 tahun yang saat melahirkan anak lahir hidup pertama berusia kurang dari 20 tahun,Sumber: BPS Provinsi Bali,
+397,Proporsi Perempuan Pernah Kawin Usia 15-49 Tahun yang Pernah Melahirkan Anak Lahir Hidup dalam 2 Tahun Terakhir Tidak di Fasilitas Kesehatan (MTF),40,564,Keterangan: proporsi per 1.000 perempuan usia 15-49 tahun yang dalam 2 tahun terakhir melahirkan anak lahir hidup,Sumber: BPS Provinsi Bali,
+398,Persentase Penduduk Usia 25 Tahun ke Atas dengan Pendidikan SMA ke Atas di Provinsi Bali Menurut Kabupaten/Kota dan Jenis Kelamin,40,564,,Sumber: BPS Provinsi Bali,Persen
+399,Tingkat Partisipasi Angkatan Kerja Provinsi Bali Menurut Kabupaten/Kota dan Jenis Kelamin,40,564,,Sumber: BPS Provinsi Bali,Persen
+408,[Metode Baru] Umur Harapan Hidup Saat Lahir (UHH) Menurut Kabupaten/Kota dan Jenis Kelamin di Provinsi Bali Hasil Long Form SP2020,40,522,Keterangan Metode Baru: Sumber data umur harapan hidup saat lahir menggunakan hasil Long Form SP2020 (LF SP2020).,Badan Pusat Statistik,Tahun
+410,[Metode Baru] Indeks Pembangunan Manusia Menurut Kabupaten/Kota dan Jenis Kelamin di Provinsi Bali (Umur Harapan Hidup Hasil Long Form SP2020),40,563,Keterangan: Menggunakan Indikator Usia Harapan Hidup yang berdasarkan hasil Long Form Sensus Penduduk 2020 (LF SP2020).,Badan Pusat Statistik,
+411,[Metode Baru] Indeks Pembangunan Gender (IPG) Provinsi Bali Menurut Kabupaten/Kota (Umur Harapan Hidup Hasil Long Form SP2020),40,564,Keterangan: Menggunakan Indikator Usia Harapan Hidup yang berdasarkan hasil Long Form Sensus Penduduk 2020 (LF SP2020).,Badan Pusat Statistik,
+111,Pertumbuhan PDRB/Ekonomi Kabupaten/Kota di Provinsi Bali,52,531,,,Persen
+140,PDRB Triwulanan Provinsi Bali Atas Dasar Harga Berlaku Menurut Lapangan Usaha,52,531,,,Juta Rupiah
+141,PDRB Triwulanan Provinsi Bali Atas Dasar Harga Konstan 2010 Menurut Lapangan Usaha,52,531,,,Juta Rupiah
+143,Pertumbuhan PDRB Triwulanan Provinsi Bali (y-o-y) Menurut Lapangan Usaha,52,531,,,Persen
+155,Pertumbuhan PDRB Triwulanan Provinsi Bali (c to c) Menurut Lapangan Usaha,52,531,,,Persen
+156,Pertumbuhan PDRB Triwulanan Provinsi Bali (q to q) Menurut Lapangan Usaha,52,531,,,Persen
+161,Indeks Implisit PDRB Triwulanan Provinsi Bali Series 2010 Menurut Lapangan Usaha,52,531,,,
+162,Laju Implisit PDRB Triwulanan Series 2010 Provinsi Bali Menurut Lapangan Usaha,52,531,,,Persen
+165,Distribusi PDRB Triwulanan Provinsi Bali Menurut Lapangan Usaha,52,531,,,Persen
+170,PDRB Kabupaten/Kota di Provinsi Bali Atas Dasar Harga Berlaku,52,531,,,Milyar Rupiah
+171,PDRB Kabupaten/Kota di Provinsi Bali Atas Dasar Harga Konstan 2010,52,531,,,Milyar Rupiah
+172,PDRB Perkapita Atas Dasar harga Berlaku Kabupaten/Kota di Provinsi Bali,52,531,,,Ribu Rupiah
+363,PDRB Tahunan Provinsi Bali Atas Dasar Harga Berlaku Menurut Lapangan Usaha,52,531,,,Milyar Rupiah
+365,PDRB Tahunan Provinsi Bali Atas Dasar Harga Konstan 2010 Menurut Lapangan Usaha,52,531,,,Milyar Rupiah
+368,Distribusi PDRB Tahunan Provinsi Bali Atas Dasar Harga Berlaku Menurut Lapangan Usaha,52,531,,,Persen
+369,Pertumbuhan PDRB/Ekonomi Tahunan Provinsi Bali Menurut Lapangan Usaha,52,531,,,Persen
+370,Indeks Implisit PDRB Tahunan Provinsi Bali Menurut Lapangan Usaha,52,531,,,
+373,Laju Implisit PDRB Tahunan Provinsi Bali Menurut Lapangan Usaha,52,531,,,Persen
+415,PDRB Triwulanan Menurut Kabupaten/Kota Atas Dasar Harga Berlaku Provinsi Bali,52,531,,"2023: Angka sementara,
+2024: Angka sangat sementara,
+2025: Angka sangat-sangat sementara.
+Sumber: Badan Pusat Statistik dan sumber lain.",Milyar Rupiah
+416,PDRB Triwulanan Menurut Kabupaten/Kota Atas Dasar Harga Konstan Provinsi Bali,52,531,,"2023: Angka sementara,
+2024: Angka sangat sementara,
+2025: Angka sangat-sangat sementara.
+Sumber: Badan Pusat Statistik dan sumber lain.
+",Milyar Rupiah
+417,Distribusi PDRB Triwulanan Menurut Kabupaten/Kota Atas Dasar Harga Berlaku Provinsi Bali,52,531,,"2023: Angka sementara,
+2024: Angka sangat sementara,
+2025: Angka sangat-sangat sementara.
+Sumber: Badan Pusat Statistik dan sumber lain.
+",Milyar Rupiah
+418,Laju Pertumbuhan (q-to-q) PDRB Triwulanan Menurut Kabupaten/Kota Provinsi Bali,52,531,,"2023: Angka sementara,
+2024: Angka sangat sementara,
+2025: Angka sangat-sangat sementara.
+Sumber: Badan Pusat Statistik dan sumber lain.
+",Persen
+419,Laju Pertumbuhan (y-on-y) PDRB Triwulanan Menurut Kabupaten/Kota Provinsi Bali,52,531,,"2023: Angka sementara,
+2024: Angka sangat sementara,
+2025: Angka sangat-sangat sementara.
+Sumber: Badan Pusat Statistik dan sumber lain.
+",Persen
+420,Laju Pertumbuhan (c-to-c) PDRB Triwulanan Menurut Kabupaten/Kota Provinsi Bali,52,531,,"2023: Angka sementara,
+2024: Angka sangat sementara,
+2025: Angka sangat-sangat sementara.
+Sumber: Badan Pusat Statistik dan sumber lain.
+",Persen
+231,Produksi Tanaman Pangan Provinsi Bali Menurut Kabupaten/Kota,53,557,,Sumber: BPS Provinsi Bali,Ton
+382,Luas Panen Padi per Bulan Menurut Kabupaten/Kota di Provinsi Bali,53,557,"Sumber: BPS Provinsi Bali, Survei Kerangka Sampel Area (KSA)",,Hektar
+383,Produksi Padi per Bulan Menurut Kabupaten/Kota di Provinsi Bali,53,557,"Sumber: BPS Provinsi Bali, Survei Kerangka Sampel Area (KSA)",GKG = Gabah Kering Giling,Ton GKG
+384,Produksi Beras per Bulan Menurut Kabupaten/Kota di Provinsi Bali,53,557,"Sumber: BPS Provinsi Bali, Survei Kerangka Sampel Area (KSA)",,Ton
+431,Jumlah Petani Menurut Kabupaten/Kota dan Jenis Kelamin di Provinsi Bali,53,557,"Sumber: Sensus Pertanian 2013, Survei Pertanian Antar Sensus (SUTAS) 2018, dan Sensus Pertanian 2023.",,Orang
+348,Produksi Kelapa Menurut Kabupaten/Kota di Provinsi Bali,54,557,,"Sumber: Dinas Pertanian dan Ketahanan Pangan Provinsi Bali
+",Ton
+349,Produksi Kopi Arabika Menurut Kabupaten/Kota di Provinsi Bali,54,557,"
+","Sumber: Dinas Pertanian dan Ketahanan Pangan Provinsi Bali
+",Ton
+350,Produksi Kopi Robusta Menurut Kabupaten/Kota di Provinsi Bali,54,557,,"Sumber: Dinas Pertanian dan Ketahanan Pangan Provinsi Bali 
+
+",Ton
+351,Produksi Cengkeh Menurut Kabupaten/Kota di Provinsi Bali,54,557,,Sumber: Dinas Pertanian dan Ketahanan Pangan Provinsi Bali,Ton
+352,Produksi Kakao Menurut Kabupaten/Kota di Provinsi Bali,54,557,,"Sumber: Dinas Pertanian dan Ketahanan Pangan Provinsi Bali
+",Ton
+353,Produksi Tembakau Menurut Kabupaten/Kota di Provinsi Bali,54,557,,Sumber: Dinas Pertanian dan Ketahanan Pangan Provinsi Bali,Ton
+354,Produksi Jambu Mete Menurut Kabupaten/Kota di Provinsi Bali,54,557,,"Sumber: Dinas Pertanian dan Ketahanan Pangan Provinsi Bali
+",Ton
+355,Produksi Enau/Aren Menurut Kabupaten/Kota di Provinsi Bali,54,557,,Sumber: Dinas Pertanian dan Ketahanan Pangan Provinsi Bali,Ton
+356,Produksi Panili Menurut Kabupaten/Kota di Provinsi Bali,54,557,,Sumber: Dinas Pertanian dan Ketahanan Pangan Provinsi Bali,Ton
+187,Produksi Buah Mangga Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-BST, BPS Provinsi Bali",Ton
+200,Produksi Buah Jeruk Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-BST, BPS Provinsi Bali",Ton
+201,Produksi Buah Pisang Provinsi Bali Menurut Kabupaten/Kota di Bali,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-BST, BPS Provinsi Bali",Ton
+202,Produksi Buah Salak Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-BST, BPS Provinsi Bali",Ton
+203,Produksi Buah Semangka Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-BST, BPS Provinsi Bali",Ton
+204,Produksi Buah Pepaya Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-BST, BPS Provinsi Bali",Ton
+205,Produksi Buah Rambutan Provinsi Bali Menurut Kabupaten/Kota di Bali,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-BST, BPS Provinsi Bali",Ton
+331,Produksi Bawang Daun Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-SBS, BPS Provinsi Bali",Ton
+332,Produksi Bawang Merah Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-SBS, BPS Provinsi Bali",Ton
+333,Produksi Bawang Putih Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-SBS, BPS Provinsi Bali",Ton
+334,Produksi Buncis Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-SBS, BPS Provinsi Bali",Ton
+335,Produksi Cabe Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-SBS, BPS Provinsi Bali",Ton
+336,Produksi Kacang Panjang Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-SBS, BPS Provinsi Bali",Ton
+337,Produksi Kangkung Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-SBS, BPS Provinsi Bali",Ton
+338,Produksi Kentang Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-SBS, BPS Provinsi Bali
+",Ton
+339,Produksi Kubis Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-SBS, BPS Provinsi Bali",Ton
+340,Produksi Mentimun Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-SBS, BPS Provinsi Bali",Ton
+341,Produksi Petsai/Sawi Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-SBS, BPS Provinsi Bali",Ton
+342,Produksi Terung Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-SBS, BPS Provinsi Bali",Ton
+343,Produksi Tomat Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-SBS, BPS Provinsi Bali",Ton
+344,Produksi Wortel Provinsi Bali Menurut Kabupaten/Kota,55,557,,"Sumber: Statistik Pertanian Hortikultura SPH-SBS, BPS Provinsi Bali",Ton
+234,Produksi Perikanan Menurut Kabupaten/Kota di Provinsi Bali,56,557,,Sumber: Dinas Kelautan dan Perikanan Provinsi Bali,Ton
+330,Nilai Produksi Perikanan Menurut Kabupaten/Kota di Provinsi Bali,56,557,,Sumber: Dinas Kelautan dan Perikanan Provinsi Bali,Ribu Rupiah
+78,Banyaknya Pegawai Negeri Sipil di Provinsi Bali Menurut Pemerintah Daerah pada Akhir Tahun,101,534,Keterangan: Data Denpasar termasuk juga data PNS Pemerintah Provinsi.,Sumber: Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Provinsi Bali.,Orang
+357,Banyaknya Pegawai Negeri Sipil Menurut Tingkat Kepangkatan dan Jenis Kelamin di Provinsi Bali pada Akhir Tahun,101,534,,Sumber: Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Provinsi Bali.,Orang
+240,Rata-rata Harga Eceran Emas Perhiasan di Kota Denpasar,102,536,,,Rupiah/Gram
+146,PDRB Tahunan Provinsi Bali Atas Dasar Harga Berlaku Menurut Pengeluaran,154,531,,,Milyar Rupiah
+147,PDRB Tahunan Provinsi Bali Atas Dasar Harga Konstan 2010 Menurut Pengeluaran,154,531,,,Milyar Rupiah
+148,Distribusi PDRB Tahunan Provinsi Bali Menurut Pengeluaran,154,531,,,Persen
+149,Pertumbuhan PDRB/Ekonomi Tahunan Provinsi Bali Menurut Pengeluaran,154,531,,,Persen
+150,PDRB Triwulanan Provinsi Bali Atas Dasar Harga Berlaku Menurut Pengeluaran,154,531,,,Milyar Rupiah
+151,PDRB Triwulanan Provinsi Bali Atas Dasar Harga Konstan 2010 Menurut Pengeluaran,154,531,,,Milyar Rupiah
+152,Distribusi PDRB Triwulanan Provinsi Bali Menurut Pengeluaran,154,531,,,Persen
+153,Pertumbuhan PDRB Triwulanan Provinsi Bali (q to q) Menurut Pengeluaran,154,531,,,Persen
+154,Pertumbuhan PDRB Triwulanan Provinsi Bali (y-o-y) Menurut Pengeluaran,154,531,,,Persen
+159,Indeks Implisit PDRB Tahunan Provinsi Bali Menurut Pengeluaran,154,531,,,
+160,Laju Implisit PDRB Tahunan Provinsi Bali Menurut Pengeluaran,154,531,,,Persen
+163,Indeks Implisit PDRB Triwulanan Provinsi Bali Menurut Pengeluaran,154,531,,,
+164,Laju Implisit PDRB Triwulanan Provinsi Bali Menurut Pengeluaran,154,531,,,Persen

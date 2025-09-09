@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('indicator_likes', function (Blueprint $table) {
+        Schema::create('subkategori', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('indicator_id')->constrained('indicators')->onDelete('cascade');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->string('name');
             $table->timestamps();
-
-            $table->unique(['indicator_id', 'user_id']);
         });
     }
 
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('indicator_likes');
+        Schema::dropIfExists('subkategori');
     }
 };

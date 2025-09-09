@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ImprovementsTableSeeder::class,
             UserSeeder::class,
+            KategoriSeeder::class,
+            SubkategoriSeeder::class,
             IndicatorSeeder::class,
         ]);
     }
