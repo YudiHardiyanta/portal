@@ -23,7 +23,7 @@ Route::get('/api/improvements', function () {
     return response()->json(Improvement::all(['id', 'name']));
 });
 Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
-Route::get('/indicators', [IndicatorController::class, 'index'])->name('indicators.index');
+Route::get('/indicators', [IndicatorController::class, 'list'])->name('indicators.index');
 Route::get('/indicators/{indicator}', [IndicatorController::class, 'show'])->name('indicators.show');
 
 // Perlu Login
@@ -36,6 +36,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::post('/indicators/{indicator}/like', [IndicatorController::class, 'like'])->name('indicators.like');
-    Route::delete('/indicators/{indicator}/unlike', [IndicatorController::class, 'unlike'])->name('indicators.unlike');
+    Route::post('/indicators/{indicator}/unlike', [IndicatorController::class, 'unlike'])->name('indicators.unlike');
 });
 require __DIR__.'/auth.php';

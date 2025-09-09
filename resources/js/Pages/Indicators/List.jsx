@@ -5,7 +5,6 @@ import { Heart, Eye, Folder, Tag } from "lucide-react";
 import Skeletons from "@/Components/Skeletons";
 
 export default function List({ indicators = [], query = "", sort = "" }) {
-    const { auth } = usePage().props;
     const [keyword, setKeyword] = useState(query || "");
     const [localSort, setLocalSort] = useState(sort || "");
     const [localIndicators, setLocalIndicators] = useState(indicators.data || []);
@@ -17,15 +16,11 @@ export default function List({ indicators = [], query = "", sort = "" }) {
 
     const handleSearch = () => {
         setLoading(true);
-        router.get(
-            route("indicators.index"),
-            { q: keyword, sort: localSort },
-            {
-                preserveState: true,
-                replace: true,
-                onFinish: () => setLoading(false),
-            }
-        );
+        router.get(route("indicators.index"), { q: keyword, sort: localSort }, {
+            preserveState: true,
+            replace: true,
+            onFinish: () => setLoading(false),
+        });
     };
 
     const handleSortChange = (e) => {
@@ -37,38 +32,6 @@ export default function List({ indicators = [], query = "", sort = "" }) {
             replace: true,
             onFinish: () => setLoading(false),
         });
-    };
-
-    const toggleLike = (indicator) => {
-        if (!auth.user) {
-            router.visit(route("login"));
-            return;
-        }
-
-        const updatedIndicators = localIndicators.map((item) =>
-            item.var_id === indicator.var_id
-                ? {
-                      ...item,
-                      liked: !item.liked,
-                      likes_count: item.liked
-                          ? item.likes_count - 1
-                          : item.likes_count + 1,
-                  }
-                : item
-        );
-        setLocalIndicators(updatedIndicators);
-
-        if (indicator.liked) {
-            router.delete(route("indicators.unlike", indicator.var_id), {
-                preserveScroll: true,
-                preserveState: true,
-            });
-        } else {
-            router.post(route("indicators.like", indicator.var_id), {}, {
-                preserveScroll: true,
-                preserveState: true,
-            });
-        }
     };
 
     const handlePageClick = (url) => {
@@ -91,9 +54,7 @@ export default function List({ indicators = [], query = "", sort = "" }) {
                                 placeholder="Cari data..."
                                 value={keyword}
                                 onChange={(e) => setKeyword(e.target.value)}
-                                onKeyDown={(e) => {
-                                    if (e.key === "Enter") handleSearch();
-                                }}
+                                onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                                 className="flex-1 py-2 pl-3 pr-4 text-gray-700 placeholder-gray-400 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
                             <button
@@ -132,16 +93,11 @@ export default function List({ indicators = [], query = "", sort = "" }) {
                             ) : (
                                 <div className="space-y-6">
                                     {localIndicators.map((item) => (
-                                        <div
-                                            key={item.var_id}
-                                            className="flex items-start justify-between pb-4 space-x-4 border-b"
-                                        >
+                                        <div key={item.var_id} className="flex items-start justify-between pb-4 space-x-4 border-b">
                                             <div>
                                                 <Link href={route("indicators.show", { indicator: item.var_id })}>
                                                     <h3 className="text-lg font-semibold">{item.title}</h3>
                                                 </Link>
-
-                                                <p className="text-gray-600">{item.location}</p>
 
                                                 <div className="flex items-center mt-2 space-x-6 text-sm text-gray-500">
                                                     <span className="flex items-center space-x-1">
@@ -156,16 +112,11 @@ export default function List({ indicators = [], query = "", sort = "" }) {
                                             </div>
 
                                             <div className="flex items-center space-x-4 text-gray-500">
-                                                <button
-                                                    onClick={() => toggleLike(item)}
-                                                    className="flex items-center space-x-1"
-                                                >
-                                                    <Heart
-                                                        size={18}
-                                                        className={item.liked ? "text-red-500" : "text-gray-400"}
-                                                    />
+                                                <div className="flex items-center space-x-1">
+                                                    <Heart size={18} className="text-gray-500" />
                                                     <span className="text-sm">{item.likes_count}</span>
-                                                </button>
+                                                </div>
+
                                                 <div className="flex items-center space-x-1">
                                                     <Eye size={18} />
                                                     <span className="text-sm">{item.total_views}</span>
@@ -187,9 +138,7 @@ export default function List({ indicators = [], query = "", sort = "" }) {
                                 key={index}
                                 onClick={() => handlePageClick(link.url)}
                                 disabled={!link.url}
-                                className={`px-3 py-1 border rounded ${
-                                    link.active ? "bg-blue-900 text-white" : "text-gray-700"
-                                }`}
+                                className={`px-3 py-1 border rounded ${link.active ? "bg-blue-900 text-white" : "text-gray-700"}`}
                                 dangerouslySetInnerHTML={{ __html: link.label }}
                             />
                         ))}

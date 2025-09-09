@@ -41,22 +41,10 @@ export default function AppLayout({ children, title = "Portal Satudata Bali" }) 
               <>
                 <li>
                   <Link
-                    href={route("dashboard")}
-                    className={`px-1 pb-2 transition ${
-                      route().current("dashboard")
-                        ? "text-blue-900 border-b-4 border-blue-900"
-                        : "text-[#1C2541] hover:text-blue-900"
-                    }`}
-                  >
-                    Dashboard
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href={route("logout")}
                     method="post"
                     as="button"
-                    className="px-1 pb-2 text-[#1C2541] hover:text-red-600 transition"
+                    className="px-1 pb-2 text-[#1C2541] hover:text-blue-900 transition"
                   >
                     Logout
                   </Link>
@@ -110,23 +98,10 @@ export default function AppLayout({ children, title = "Portal Satudata Bali" }) 
               <>
                 <li>
                   <Link
-                    href={route("dashboard")}
-                    className={`block px-2 py-2 transition ${
-                      route().current("dashboard")
-                        ? "text-blue-900 font-semibold"
-                        : "text-gray-700 hover:text-blue-900"
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Dashboard
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href={route("logout")}
                     method="post"
                     as="button"
-                    className="block w-full px-2 py-2 text-left text-gray-700 transition hover:text-red-600"
+                    className="block w-full px-2 py-2 text-left text-gray-700 transition hover:text-blue-900"
                     onClick={() => setIsOpen(false)}
                   >
                     Logout

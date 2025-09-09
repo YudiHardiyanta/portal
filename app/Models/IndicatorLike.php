@@ -11,9 +11,9 @@ class IndicatorLike extends Model
         'user_id',
     ];
 
-    public function indicator()
+     public function indicator()
     {
-        return $this->belongsTo(Indicator::class);
+        return $this->belongsTo(Indicator::class, 'indicator_id', 'var_id');
     }
 
     public function user()
