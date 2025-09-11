@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -13,6 +12,7 @@ return new class extends Migration
     {
         Schema::create('indicators', function (Blueprint $table) {
             $table->unsignedBigInteger('var_id')->primary();
+            $table->unsignedBigInteger('id_dashboard')->nullable();
             $table->string('title');
             $table->unsignedBigInteger('sub_id');
             $table->unsignedBigInteger('subcsa_id');
@@ -23,12 +23,12 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('sub_id')
-                  ->references('id')->on('kategori')
-                  ->onDelete('cascade');
+                ->references('id')->on('kategori')
+                ->onDelete('cascade');
 
             $table->foreign('subcsa_id')
-                  ->references('id')->on('subkategori')
-                  ->onDelete('cascade');
+                ->references('id')->on('subkategori')
+                ->onDelete('cascade');
         });
     }
 

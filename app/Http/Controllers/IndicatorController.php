@@ -62,7 +62,7 @@ class IndicatorController extends Controller
 
         $token = JwtHelper::generateToken(
             "e0d77f022c36172beafd31f743aa08e432a150e3d3df880c94ea8a7f3febcb14",
-            11
+            $indicator->id_dashboard
         );
 
         $indicator->load([

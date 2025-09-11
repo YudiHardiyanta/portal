@@ -19,12 +19,13 @@ class IndicatorSeeder extends Seeder
                     'var_id' => $task['var_id'],
                 ],
                 [
-                    'title'     => $task['title'] ?? null,
-                    'sub_id'    => $task['sub_id'] ?? null,
+                    'id_dashboard' => $task['id_dashboard'] !== '' ? $task['id_dashboard'] : null,
+                    'title' => $task['title'] ?? null,
+                    'sub_id' => $task['sub_id'] ?? null,
                     'subcsa_id' => $task['subcsa_id'] ?? null,
-                    'def'       => $task['def'] ?? null,
-                    'notes'     => $task['notes'] ?? null,
-                    'unit'      => $task['unit'] ?? null,
+                    'def' => $task['def'] ?? null,
+                    'notes' => $task['notes'] ?? null,
+                    'unit' => $task['unit'] ?? null,
                 ]
             );
         }

@@ -10,7 +10,7 @@ class Indicator extends Model
 {
     protected $primaryKey = 'var_id';
     protected $fillable = [
-       'var_id','title', 'sub_id', 'subcsa_id', 'def', 'notes', 'unit','total_views'
+       'var_id','title', 'sub_id', 'subcsa_id', 'def', 'notes', 'unit','total_views','id_dashboard'
     ];
 
     protected $appends = ['is_liked', 'likes_count'];
