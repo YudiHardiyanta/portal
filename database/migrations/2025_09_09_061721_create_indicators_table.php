@@ -13,6 +13,7 @@ return new class extends Migration {
         Schema::create('indicators', function (Blueprint $table) {
             $table->unsignedBigInteger('var_id')->primary();
             $table->unsignedBigInteger('id_dashboard')->nullable();
+            $table->string('slug')->unique();
             $table->string('title');
             $table->unsignedBigInteger('sub_id');
             $table->unsignedBigInteger('subcsa_id');

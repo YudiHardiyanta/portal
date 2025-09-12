@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { router, usePage, Link } from "@inertiajs/react";
+import { router, Link } from "@inertiajs/react";
 import AppLayout from "@/Layouts/AppLayout";
 import { Heart, Eye, Folder, Tag } from "lucide-react";
 import Skeletons from "@/Components/Skeletons";
@@ -7,31 +7,39 @@ import Skeletons from "@/Components/Skeletons";
 export default function List({ indicators = [], query = "", sort = "" }) {
     const [keyword, setKeyword] = useState(query || "");
     const [localSort, setLocalSort] = useState(sort || "");
-    const [localIndicators, setLocalIndicators] = useState(indicators.data || []);
+    const [localIndicators, setLocalIndicators] = useState(indicators?.data || []);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        setLocalIndicators(indicators.data || []);
+        setLocalIndicators(indicators?.data || []);
     }, [indicators]);
 
     const handleSearch = () => {
         setLoading(true);
-        router.get(route("indicators.index"), { q: keyword, sort: localSort }, {
-            preserveState: true,
-            replace: true,
-            onFinish: () => setLoading(false),
-        });
+        router.get(
+            route("indicators.index"),
+            { q: keyword, sort: localSort },
+            {
+                preserveState: true,
+                replace: true,
+                onFinish: () => setLoading(false),
+            }
+        );
     };
 
     const handleSortChange = (e) => {
         const value = e.target.value;
         setLocalSort(value);
         setLoading(true);
-        router.get(route("indicators.index"), { q: keyword, sort: value }, {
-            preserveState: true,
-            replace: true,
-            onFinish: () => setLoading(false),
-        });
+        router.get(
+            route("indicators.index"),
+            { q: keyword, sort: value },
+            {
+                preserveState: true,
+                replace: true,
+                onFinish: () => setLoading(false),
+            }
+        );
     };
 
     const handlePageClick = (url) => {
@@ -55,13 +63,16 @@ export default function List({ indicators = [], query = "", sort = "" }) {
                                 value={keyword}
                                 onChange={(e) => setKeyword(e.target.value)}
                                 onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-                                className="flex-1 py-2 pl-3 pr-4 text-gray-700 placeholder-gray-400 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                disabled={loading}
+                                aria-label="Pencarian indikator"
+                                className="flex-1 py-2 pl-3 pr-4 text-gray-700 placeholder-gray-400 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 disabled:bg-gray-100"
                             />
                             <button
                                 onClick={handleSearch}
-                                className="px-4 py-2 text-white transition-colors bg-blue-900 rounded-r-lg hover:bg-blue-700"
+                                disabled={loading}
+                                className="px-4 py-2 text-white transition-colors bg-blue-900 rounded-r-lg hover:bg-blue-700 disabled:opacity-50"
                             >
-                                Cari
+                                {loading ? "..." : "Cari"}
                             </button>
                         </div>
 
@@ -69,7 +80,8 @@ export default function List({ indicators = [], query = "", sort = "" }) {
                             <select
                                 value={localSort}
                                 onChange={handleSortChange}
-                                className="px-3 py-2 pr-8 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                disabled={loading}
+                                className="px-3 py-2 pr-8 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 disabled:bg-gray-100"
                             >
                                 <option value="">Urutkan</option>
                                 <option value="latest">Terbaru</option>
@@ -79,25 +91,35 @@ export default function List({ indicators = [], query = "", sort = "" }) {
                         </div>
                     </div>
 
-                    <h2 className="mb-4 text-2xl font-bold">
+                    <h2 className="mb-4 text-2xl font-bold text-gray-800">
                         {query ? `Hasil pencarian '${query}'` : "Semua data indikator"}
                     </h2>
 
                     {loading && <Skeletons count={5} />}
+
                     {!loading && (
                         <>
-                            {(!localIndicators || localIndicators.length === 0) ? (
+                            {!localIndicators?.length ? (
                                 <div className="flex flex-col items-center justify-center py-10 text-gray-500">
                                     <p>Tidak ada data ditemukan.</p>
                                 </div>
                             ) : (
                                 <div className="space-y-6">
                                     {localIndicators.map((item) => (
-                                        <div key={item.var_id} className="flex items-start justify-between pb-4 space-x-4 border-b">
+                                        <div
+                                            key={item.slug || item.id}
+                                            className="flex flex-col justify-between pb-4 border-b md:flex-row md:items-start md:space-x-4"
+                                        >
                                             <div>
-                                                <Link href={route("indicators.show", { indicator: item.var_id })}>
-                                                    <h3 className="text-lg font-semibold">{item.title}</h3>
-                                                </Link>
+                                                {item.slug ? (
+                                                    <Link href={route("indicators.show", { indicator: item.slug })}>
+                                                        <h3 className="text-lg font-semibold text-blue-900 hover:underline">
+                                                            {item.title}
+                                                        </h3>
+                                                    </Link>
+                                                ) : (
+                                                    <h3 className="text-lg font-semibold text-gray-600">{item.title}</h3>
+                                                )}
 
                                                 <div className="flex items-center mt-2 space-x-6 text-sm text-gray-500">
                                                     <span className="flex items-center space-x-1">
@@ -111,39 +133,41 @@ export default function List({ indicators = [], query = "", sort = "" }) {
                                                 </div>
                                             </div>
 
-                                            <div className="flex items-center space-x-4 text-gray-500">
+                                            <div className="flex items-center mt-3 space-x-4 text-gray-500 md:mt-0">
                                                 <div className="flex items-center space-x-1">
-                                                    <Heart size={18} className="text-gray-500" />
-                                                    <span className="text-sm">{item.likes_count}</span>
+                                                    <Heart size={18} />
+                                                    <span className="text-sm">{item.likes_count ?? 0}</span>
                                                 </div>
-
                                                 <div className="flex items-center space-x-1">
                                                     <Eye size={18} />
-                                                    <span className="text-sm">{item.total_views}</span>
+                                                    <span className="text-sm">{item.total_views ?? 0}</span>
                                                 </div>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                             )}
+
+                            {indicators.links && (
+                                <div className="flex justify-center mt-8 space-x-2">
+                                    {indicators.links.map((link) => (
+                                        <button
+                                            key={link.label}
+                                            onClick={() => handlePageClick(link.url)}
+                                            disabled={!link.url || loading}
+                                            className={`px-3 py-1 border rounded ${
+                                                link.active
+                                                    ? "bg-blue-900 text-white"
+                                                    : "text-gray-700 hover:bg-gray-100"
+                                            } disabled:opacity-50`}
+                                            dangerouslySetInnerHTML={{ __html: link.label }}
+                                        />
+                                    ))}
+                                </div>
+                            )}
                         </>
                     )}
                 </div>
-
-                {/* Pagination */}
-                {indicators.links && (
-                    <div className="flex justify-center mt-8 space-x-2">
-                        {indicators.links.map((link, index) => (
-                            <button
-                                key={index}
-                                onClick={() => handlePageClick(link.url)}
-                                disabled={!link.url}
-                                className={`px-3 py-1 border rounded ${link.active ? "bg-blue-900 text-white" : "text-gray-700"}`}
-                                dangerouslySetInnerHTML={{ __html: link.label }}
-                            />
-                        ))}
-                    </div>
-                )}
             </div>
         </AppLayout>
     );

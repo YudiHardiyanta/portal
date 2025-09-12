@@ -24,7 +24,7 @@ export default function FeedbackFAB() {
     <>
       <button
         onClick={openModal}
-        className="fixed flex items-center justify-center text-white transition bg-blue-600 rounded-full shadow-lg bottom-6 right-6 w-14 h-14 hover:bg-blue-700"
+        className="fixed z-50 flex items-center justify-center text-white transition bg-blue-600 rounded-full shadow-lg bottom-6 right-6 w-14 h-14 hover:bg-blue-700"
       >
         <MessageCircle className="w-7 h-7" />
       </button>

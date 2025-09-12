@@ -15,7 +15,7 @@ class IndicatorController extends Controller
         $user = auth()->user();
 
         $query = Indicator::query()
-            ->select('var_id', 'title', 'sub_id', 'subcsa_id', 'total_views')
+            ->select( 'var_id','slug','title', 'sub_id', 'subcsa_id', 'total_views')
             ->with([
                 'kategori:id,name',
                 'subkategori:id,name',
@@ -39,6 +39,7 @@ class IndicatorController extends Controller
         $indicators->getCollection()->transform(function ($indicator) use ($user) {
             return [
                 'var_id' => $indicator->var_id,
+                'slug' => $indicator->slug,
                 'title' => $indicator->title,
                 'kategori' => $indicator->kategori?->name,
                 'subkategori' => $indicator->subkategori?->name,
@@ -75,6 +76,7 @@ class IndicatorController extends Controller
         return Inertia::render('Indicators/Show', [
             'indicator' => [
                 'id' => $indicator->var_id,
+                'slug' => $indicator->slug,
                 'title' => $indicator->title,
                 'kategori' => $indicator->kategori?->name,
                 'subkategori' => $indicator->subkategori?->name,
@@ -84,6 +86,7 @@ class IndicatorController extends Controller
                 'views' => $indicator->total_views,
                 'likes' => $indicator->likes_count,
                 'is_liked' => $user ? $indicator->likes()->where('user_id', $user->id)->exists() : false,
+                'id_dashboard' => $indicator->id_dashboard,
             ],
             'token' => $token,
         ]);

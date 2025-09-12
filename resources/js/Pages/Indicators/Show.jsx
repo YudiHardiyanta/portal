@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { router, usePage } from "@inertiajs/react";
 import AppLayout from "@/Layouts/AppLayout";
-import { Eye, Heart, Folder, Tag, StickyNote } from "lucide-react";
+import { Eye, Heart, Folder, Tag, StickyNote, AlertCircle } from "lucide-react";
 
 export default function Show({ indicator, token }) {
     const { auth } = usePage().props;
@@ -22,7 +22,7 @@ export default function Show({ indicator, token }) {
 
         const likeRoute = route(
             liked ? "indicators.unlike" : "indicators.like",
-            { indicator: indicator.id }
+            { indicator: indicator.slug }
         );
 
         router.post(likeRoute, {}, {
@@ -109,13 +109,19 @@ export default function Show({ indicator, token }) {
                         {/* Content */}
                         <div className="p-4">
                             {activeTab === "data" && (
-                                <iframe
-                                    src={iframeUrl}
-                                    frameBorder="0"
-                                    width="100%"
-                                    height="600"
-                                    allowTransparency
-                                ></iframe>
+                                indicator.id_dashboard ? (
+                                    <iframe
+                                        src={iframeUrl}
+                                        width="100%"
+                                        height="600"
+                                        allowTransparency
+                                    ></iframe>
+                                ) : (
+                                    <div className="flex items-center justify-center gap-2 p-6 text-gray-500">
+                                        <AlertCircle size={20} className="text-gray-400" />
+                                        <span>Data saat ini tidak tersedia</span>
+                                    </div>
+                                )
                             )}
                             {activeTab === "metadata" && (
                                 <div>

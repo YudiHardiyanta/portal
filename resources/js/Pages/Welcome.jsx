@@ -1,163 +1,110 @@
 import { useState } from "react";
-import AppLayout from '@/Layouts/AppLayout';
-import { router } from '@inertiajs/react';
+import AppLayout from "@/Layouts/AppLayout";
+import { router, Link } from "@inertiajs/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 
-export default function Welcome({ auth, laravelVersion, phpVersion, token }) {
-    const handleImageError = () => {
-        document
-            .getElementById('screenshot-container')
-            ?.classList.add('!hidden');
-        document.getElementById('docs-card')?.classList.add('!row-span-1');
-        document
-            .getElementById('docs-card-content')
-            ?.classList.add('!flex-row');
-        document.getElementById('background')?.classList.add('!hidden');
-    };
+export default function Welcome({ auth, laravelVersion, phpVersion, token, latestIndicators = [] }) {
+  const [keyword, setKeyword] = useState("");
 
-    //untuk tab data, metadata dan standar data
-    const [activeTab, setActiveTab] = useState("data");
-    const [keyword, setKeyword] = useState("");
+  const handleSearch = () => {
+    if (keyword.trim() !== "") {
+      router.get(route("indicators.index"), { q: keyword });
+    } else {
+      router.get(route("indicators.index"));
+    }
+  };
 
-    const handleSearch = () => {
-        if (keyword.trim() !== "") {
-            router.get(route("indicators.index"), { q: keyword }, {
-                preserveState: false,
-                replace: false,
-            });
-        } else {
-            router.get(route("indicators.index"), {}, {
-                preserveState: false,
-                replace: false,
-            });
-        }
-    };
+  const iframeUrl =
+    "https://metabase.statsbali.id/embed/dashboard/" +
+    token +
+    "#bordered=true&titled=true";
 
-    //sampel untuk akses ke metabase
-    var iframeUrl = "https://metabase.statsbali.id" + "/embed/dashboard/" + token +
-        "#bordered=true&titled=true";
-
-    return (
-        <AppLayout title="Beranda">
-        <section className="relative flex flex-col items-center justify-center py-20 text-white bg-blue-800">
+  return (
+    <AppLayout title="Beranda">
+      {/* Hero Section */}
+      <section className="relative flex flex-col items-center justify-center py-24 text-white bg-blue-900">
         <img
-            src="https://picsum.photos/1200/800?grayscale"
-            alt="Jumbotron Image"
-            className="absolute inset-0 object-cover w-full h-full opacity-50"
+          src="https://picsum.photos/1600/900?grayscale"
+          alt="Jumbotron Image"
+          className="absolute inset-0 object-cover w-full h-full opacity-40"
         />
-        <div className="relative z-10 text-center">
-            <h2 className="mb-4 text-4xl font-bold">Selamat Datang</h2>
-            <p className="mb-6">Cari informasi atau data yang kamu butuhkan di sini</p>
-            <form
+        <div className="relative z-10 max-w-2xl text-center">
+          <h2 className="mb-4 text-4xl font-bold md:text-5xl">
+            Selamat Datang
+          </h2>
+          <p className="mb-8 text-lg md:text-xl">
+            Cari informasi atau data yang kamu butuhkan di sini
+          </p>
+          <form
             onSubmit={(e) => {
-                e.preventDefault();
-                handleSearch();
+              e.preventDefault();
+              handleSearch();
             }}
-            className="flex justify-center"
-            >
+            className="flex justify-center max-w-md mx-auto"
+          >
             <input
-                type="text"
-                placeholder="Cari sesuatu..."
-                value={keyword}
-                onChange={(e) => setKeyword(e.target.value)}
-                className="w-64 px-4 py-2 text-black rounded-l-lg focus:outline-none"
+              type="text"
+              placeholder="Cari dataset..."
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
+              className="w-full px-4 py-2 text-gray-900 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
             <button
-                type="submit"
-                className="px-4 py-2 bg-blue-900 rounded-r-lg hover:bg-blue-700"
+              type="submit"
+              className="px-6 py-2 font-semibold text-white transition bg-blue-700 rounded-r-lg hover:bg-blue-600"
             >
-                Cari
+              Cari
             </button>
-            </form>
+          </form>
         </div>
-        </section>
-            <main class="flex-grow bg-white px-6 py-10">
-                <h3 class="text-2xl font-semibold mb-4">Konten Utama</h3>
-                <p class="text-gray-700 leading-relaxed">
+      </section>
 
-                    {/* Card Highligh Indikator Component */}
-                    <div class="bg-white shadow-lg rounded-2xl p-6 w-64">
-                        <h2 class="text-lg font-semibold text-gray-700">Indikator A</h2>
-                        <p class="text-2xl font-bold text-gray-900 mt-2">Rp 5.200</p>
-                        <div class="flex items-center mt-3">
-                            <span class="text-green-600 flex items-center font-medium">
+      {/* Dataset Terbaru */}
+      <main className="flex-grow px-6 py-16 bg-gray-50">
+        <h3 className="mb-10 text-2xl font-bold text-center text-blue-900">
+          📊 Dataset Terbaru
+        </h3>
 
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                                </svg>
-                                +3.2%
-                            </span>
-                        </div>
-                    </div>
-
-                    {/* Component data dan standar data */}
-                    <div className="mx-auto mt-10 bg-white border shadow-lg rounded-2xl">
-                        {/* Header Tab */}
-                        <div className="flex border-b">
-                            <button
-                                onClick={() => setActiveTab("data")}
-                                className={`flex-1 px-4 py-2 text-center ${activeTab === "data"
-                                    ? "border-b-2 border-blue-600 text-blue-600 font-semibold"
-                                    : "text-gray-600 hover:text-blue-600"
-                                    }`}
-                            >
-                                Data
-                            </button>
-                            <button
-                                onClick={() => setActiveTab("metadata")}
-                                className={`flex-1 px-4 py-2 text-center ${activeTab === "metadata"
-                                    ? "border-b-2 border-blue-600 text-blue-600 font-semibold"
-                                    : "text-gray-600 hover:text-blue-600"
-                                    }`}
-                            >
-                                Metadata
-                            </button>
-                            <button
-                                onClick={() => setActiveTab("standar")}
-                                className={`flex-1 px-4 py-2 text-center ${activeTab === "standar"
-                                    ? "border-b-2 border-blue-600 text-blue-600 font-semibold"
-                                    : "text-gray-600 hover:text-blue-600"
-                                    }`}
-                            >
-                                Standar Data
-                            </button>
-                        </div>
-
-                        {/* Content */}
-                        <div className="p-4">
-                            {activeTab === "data" && (
-                                <div>
-                                    
-                                    <iframe
-                                        src={iframeUrl}
-                                        frameborder="0"
-                                        width="100%"
-                                        height="600"
-                                        allowtransparency
-                                    ></iframe>
-                                </div>
-                            )}
-
-                            {activeTab === "metadata" && (
-                                <div>
-                                    <h2 className="mb-2 text-lg font-bold">Metadata</h2>
-                                    <p className="text-gray-700">
-                                        Informasi Metadata ditampilkan di sini.
-                                    </p>
-                                </div>
-                            )}
-
-                            {activeTab === "standar" && (
-                                <div>
-                                    <h2 className="mb-2 text-lg font-bold">Standar Data</h2>
-                                    <p className="text-gray-700">
-                                        Penjelasan Standar Data ditampilkan di sini.
-                                    </p>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </p>
-            </main>
-        </AppLayout>
-    );
+        <Swiper
+          modules={[Pagination]}
+          spaceBetween={24}
+          slidesPerView={3}
+          pagination={{ clickable: true }}
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {latestIndicators.length > 0 ? (
+            latestIndicators.map((item) => (
+              <SwiperSlide key={item.id}>
+                <div className="relative z-0 flex flex-col justify-between h-56 p-6 transition border border-gray-200 shadow-sm rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 hover:shadow-lg hover:-translate-y-1">
+                  <div>
+                    <span className="px-3 py-1 text-xs font-semibold text-white bg-blue-900 rounded-full">
+                      Dataset
+                    </span>
+                    <h2 className="mt-4 text-lg font-semibold text-gray-800 break-words line-clamp-3">
+                      {item.title}
+                    </h2>
+                  </div>
+                  <Link
+                    href={route("indicators.show", { indicator: item.slug })}
+                    className="mt-4 text-sm font-medium text-blue-700 hover:underline"
+                  >
+                    Lihat Detail →
+                  </Link>
+                </div>
+              </SwiperSlide>
+            ))
+          ) : (
+            <p className="text-center text-gray-500">Belum ada dataset terbaru.</p>
+          )}
+        </Swiper>
+      </main>
+    </AppLayout>
+  );
 }

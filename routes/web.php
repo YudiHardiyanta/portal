@@ -1,6 +1,5 @@
 <?php
 use Inertia\Inertia;
-use App\Helpers\JwtHelper;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\ProfileController;
@@ -9,16 +8,16 @@ use App\Http\Controllers\IndicatorController;
 use App\Models\Improvement;
 // Tanpa perlu login
 Route::get('/', function () {
-    //contoh 
-    $token = JwtHelper::generateToken("e0d77f022c36172beafd31f743aa08e432a150e3d3df880c94ea8a7f3febcb14",11);
+     $latestIndicators = \App\Models\Indicator::latest()->take(5)->get();
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-        'token' =>$token,
+        'latestIndicators' => $latestIndicators,
     ]);
 })->name('home');
+
 Route::get('/api/improvements', function () {
     return response()->json(Improvement::all(['id', 'name']));
 });
@@ -38,4 +37,4 @@ Route::middleware('auth')->group(function () {
     Route::post('/indicators/{indicator}/like', [IndicatorController::class, 'like'])->name('indicators.like');
     Route::post('/indicators/{indicator}/unlike', [IndicatorController::class, 'unlike'])->name('indicators.unlike');
 });
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
