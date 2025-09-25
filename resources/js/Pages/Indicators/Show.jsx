@@ -3,9 +3,14 @@ import { router, usePage } from "@inertiajs/react";
 import AppLayout from "@/Layouts/AppLayout";
 import { Eye, Heart, Folder, Tag, StickyNote, AlertCircle } from "lucide-react";
 
+import MetadataIndikator from "./Metadata/Indikator";
+import MetadataVariabel from "./Metadata/Variabel";
+import MetadataKegiatan from "./Metadata/Kegiatan";
+
 export default function Show({ indicator, token }) {
     const { auth } = usePage().props;
     const [activeTab, setActiveTab] = useState("data");
+    const [activeSubTab, setActiveSubTab] = useState("indikator");
     const [liked, setLiked] = useState(indicator.is_liked ?? false);
     const [likesCount, setLikesCount] = useState(indicator.likes ?? 0);
 
@@ -105,8 +110,6 @@ export default function Show({ indicator, token }) {
                                 </button>
                             ))}
                         </div>
-
-                        {/* Content */}
                         <div className="p-4">
                             {activeTab === "data" && (
                                 indicator.id_dashboard ? (
@@ -123,12 +126,43 @@ export default function Show({ indicator, token }) {
                                     </div>
                                 )
                             )}
+
                             {activeTab === "metadata" && (
-                                <div>
-                                    <h2 className="mb-2 text-lg font-bold">Metadata</h2>
-                                    <p className="text-gray-700">Informasi Metadata ditampilkan di sini.</p>
+                                <div className="flex">
+                                    <div className="w-1/4 border-r bg-gray-50/50">
+                                        {["indikator", "variabel", "kegiatan"].map(sub => (
+                                            <button
+                                                key={sub}
+                                                onClick={() => setActiveSubTab(sub)}
+                                                className={`block w-full px-4 py-3 text-left transition-colors duration-150 ${
+                                                    activeSubTab === sub
+                                                        ? "bg-blue-50 text-blue-700 font-semibold border-r-2 border-blue-600"
+                                                        : "text-gray-700 hover:bg-gray-100"
+                                                }`}
+                                            >
+                                                {sub === "indikator"
+                                                    ? "Metadata Indikator"
+                                                    : sub === "variabel"
+                                                        ? "Metadata Variabel"
+                                                        : "Metadata Kegiatan"}
+                                            </button>
+                                        ))}
+                                    </div>
+
+                                    <div className="flex-1 p-6">
+                                        {activeSubTab === "indikator" && (
+                                            <MetadataIndikator metadata={indicator.metadata} />
+                                        )}
+                                        {activeSubTab === "variabel" && (
+                                            <MetadataVariabel metadata={indicator.metadata_variabel} />
+                                        )}
+                                        {activeSubTab === "kegiatan" && (
+                                            <MetadataKegiatan metadata={indicator.metadata_kegiatan} />
+                                        )}
+                                    </div>
                                 </div>
                             )}
+
                             {activeTab === "standar" && (
                                 <div>
                                     <h2 className="mb-2 text-lg font-bold">Standar Data</h2>

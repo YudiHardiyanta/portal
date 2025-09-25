@@ -15,7 +15,7 @@ class IndicatorController extends Controller
         $user = auth()->user();
 
         $query = Indicator::query()
-            ->select( 'var_id','slug','title', 'sub_id', 'subcsa_id', 'total_views')
+            ->select('var_id', 'slug', 'title', 'sub_id', 'subcsa_id', 'total_views')
             ->with([
                 'kategori:id,name',
                 'subkategori:id,name',
@@ -58,17 +58,20 @@ class IndicatorController extends Controller
 
     public function show(Indicator $indicator)
     {
-        // Tambah jumlah view
         $indicator->increment('total_views');
 
-        $token = JwtHelper::generateToken(
-            "e0d77f022c36172beafd31f743aa08e432a150e3d3df880c94ea8a7f3febcb14",
-            $indicator->id_dashboard
-        );
+        $token = null;
+        if ($indicator->id_dashboard) {
+            $token = JwtHelper::generateToken(
+                "e0d77f022c36172beafd31f743aa08e432a150e3d3df880c94ea8a7f3febcb14",
+                $indicator->id_dashboard
+            );
+        }
 
         $indicator->load([
             'kategori:id,name',
             'subkategori:id,name',
+            'metadataIndikator.variabel'
         ])->loadCount('likes');
 
         $user = auth()->user();
@@ -87,10 +90,35 @@ class IndicatorController extends Controller
                 'likes' => $indicator->likes_count,
                 'is_liked' => $user ? $indicator->likes()->where('user_id', $user->id)->exists() : false,
                 'id_dashboard' => $indicator->id_dashboard,
+
+                // konsisten jadi "metadata"
+                'metadata' => $indicator->metadataIndikator ? [
+                    'id' => $indicator->metadataIndikator->id_indikator,
+                    'nama_indikator' => $indicator->metadataIndikator->nama_indikator,
+                    'konsep' => $indicator->metadataIndikator->konsep,
+                    'definisi' => $indicator->metadataIndikator->definisi,
+                    'interpretasi' => $indicator->metadataIndikator->interpretasi,
+                    'metode_perhitungan' => $indicator->metadataIndikator->metode_perhitungan,
+                    'rumus' => $indicator->metadataIndikator->rumus,
+                    'ukuran' => $indicator->metadataIndikator->ukuran,
+                    'satuan' => $indicator->metadataIndikator->satuan,
+                    'variabel_disagregasi' => $indicator->metadataIndikator->variabel_disagregasi ?? [],
+                    'variabel_pembangun' => $indicator->metadataIndikator->variabel->map(fn($v) => [
+                        'id' => $v->id_variabel,
+                        'nama_variabel' => $v->nama_variabel,
+                        'alias' => $v->alias,
+                        'konsep' => $v->konsep,
+                        'definisi' => $v->definisi,
+                        'satuan' => $v->satuan,
+                        'tipe_data' => $v->tipe_data,
+                        'is_publik' => $v->is_publik,
+                    ])->toArray(),
+                ] : null,
             ],
             'token' => $token,
         ]);
     }
+
 
     // Like indikator
     public function like(Indicator $indicator)

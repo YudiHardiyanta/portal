@@ -21,6 +21,8 @@ class IndicatorSeeder extends Seeder
                 [
                     'id_dashboard' => $task['id_dashboard'] !== '' ? $task['id_dashboard'] : null,
                     'title' => $task['title'] ?? null,
+                    'id_standar' => $task['id_standar'] ?? null,
+                    'id_indikator' => $task['id_indikator'] ?? null,
                     'sub_id' => $task['sub_id'] ?? null,
                     'subcsa_id' => $task['subcsa_id'] ?? null,
                     'def' => $task['def'] ?? null,

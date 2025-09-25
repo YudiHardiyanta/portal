@@ -1,0 +1,9 @@
+var_id,title,id_dashboard,sub_id,subcsa_id,def,notes,unit
+1,"Inflasi Tahunan Kota Denpasar, Singaraja, dan Nasional",15,3,536,,"Diolah dari Hasil Survei Harga Konsumen, BPS",Persen
+47,Inflasi Tahunan Kota Singaraja Menurut 7 Kelompok Pengeluaran,16,3,536,,,Persen
+65,Inflasi Tahunan Kota Denpasar Menurut 7 Kelompok Pengeluaran,26,3,536,,,Persen
+283,Penduduk Usia Kerja Provinsi Bali Menurut Kabupaten/Kota,21,6,520,,"Data ketenagakerjaan kabupaten/kota 2016 tidak rilis dikarenakan keterbatasan jumlah sampel.
+Sumber: Survei Angkatan Kerja Nasional (Sakernas) - Agustus.
+",Orang
+235,Ekspor Impor Tahunan Provinsi Bali,22,8,535,,,US$
+414,Proyeksi Penduduk Provinsi Bali Menurut Kabupaten/Kota dan Jenis Kelamin,17,12,519,,"Data 2020 berdasarkan Sensus Penduduk (SP2020), Data proyeksi 2021-2024 berdasarkan Long Form Sensus Penduduk 2020.",Ribu Jiwa

@@ -5,6 +5,15 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\UserSeeder;
+use Database\Seeders\KonsepSeeder;
+use Database\Seeders\KategoriSeeder;
+use Database\Seeders\IndicatorSeeder;
+use Database\Seeders\StandarDataSeeder;
+use Database\Seeders\SubkategoriSeeder;
+use Database\Seeders\ImprovementsTableSeeder;
+use Database\Seeders\MetadataIndikatorSeeder;
+use Database\Seeders\MetadataVariabelSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,6 +34,10 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             KategoriSeeder::class,
             SubkategoriSeeder::class,
+            KonsepSeeder::class,
+            StandarDataSeeder::class,
+            MetadataVariabelSeeder::class,
+            MetadataIndikatorSeeder::class,
             IndicatorSeeder::class,
         ]);
     }

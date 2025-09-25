@@ -1,11 +1,13 @@
 <?php
 use Inertia\Inertia;
+use App\Models\Indicator;
+use App\Models\Improvement;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\MetadataController;
 use App\Http\Controllers\IndicatorController;
-use App\Models\Improvement;
 // Tanpa perlu login
 Route::get('/', function () {
      $latestIndicators = \App\Models\Indicator::latest()->take(5)->get();
@@ -24,11 +26,10 @@ Route::get('/api/improvements', function () {
 Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 Route::get('/indicators', [IndicatorController::class, 'list'])->name('indicators.index');
 Route::get('/indicators/{indicator}', [IndicatorController::class, 'show'])->name('indicators.show');
+Route::get('/metadata/{indicator}/indikator', [MetadataController::class, 'indikator'])->name('metadata.indikator');
+Route::get('/metadata/{indicator}/variabel', [MetadataController::class, 'variabel'])->name('metadata.variabel');
+Route::get('/metadata/{indicator}/kegiatan', [MetadataController::class, 'kegiatan'])->name('metadata.kegiatan');
 
-// Perlu Login
-// Route::get('/dashboard', function () {
-//     return Inertia::render('Dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
