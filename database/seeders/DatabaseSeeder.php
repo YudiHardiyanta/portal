@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
             StandarDataSeeder::class,
             MetadataVariabelSeeder::class,
             MetadataIndikatorSeeder::class,
+            MetadataKegiatanSeeder::class,
             IndicatorSeeder::class,
         ]);
     }

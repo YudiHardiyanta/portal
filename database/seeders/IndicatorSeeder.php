@@ -23,6 +23,7 @@ class IndicatorSeeder extends Seeder
                     'title' => $task['title'] ?? null,
                     'id_standar' => $task['id_standar'] ?? null,
                     'id_indikator' => $task['id_indikator'] ?? null,
+                    'id_kegiatan' => $task['id_kegiatan'] ?? null,
                     'sub_id' => $task['sub_id'] ?? null,
                     'subcsa_id' => $task['subcsa_id'] ?? null,
                     'def' => $task['def'] ?? null,

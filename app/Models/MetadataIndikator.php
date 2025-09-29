@@ -21,7 +21,7 @@ class MetadataIndikator extends Model
         'variabel_disagregasi',
         'indikator_komposit',
         'indikator_pembangunan',
-        'id_variabel_pembangun',   // ganti dari variabel_pembangun
+        'id_variabel_pembangun',  
         'level_estimasi',
         'publik',
     ];

@@ -22,7 +22,8 @@ class Indicator extends Model
         'unit',
         'total_views',
         'id_dashboard',
-        'id_indikator'
+        'id_indikator',
+        'id_kegiatan'
     ];
 
     protected $appends = ['is_liked', 'likes_count'];
@@ -58,12 +59,17 @@ class Indicator extends Model
 
     public function standarData()
     {
-        return $this->belongsTo(StandarData::class, 'id_standar','id_standar');
+        return $this->belongsTo(StandarData::class, 'id_standar', 'id_standar');
     }
 
     public function metadataIndikator()
     {
-        return $this->belongsTo(MetadataIndikator::class,'id_indikator','id_indikator');
+        return $this->belongsTo(MetadataIndikator::class, 'id_indikator', 'id_indikator');
+    }
+
+    public function metadataKegiatan()
+    {
+        return $this->belongsTo(MetadataKegiatan::class, 'id_kegiatan', 'id_kegiatan');
     }
 
     public function sluggable(): array
@@ -79,10 +85,5 @@ class Indicator extends Model
     public function getRouteKeyName()
     {
         return 'slug';
-    }
-
-    public function metadataKegiatan()
-    {
-        return $this->hasMany(MetadataKegiatan::class, 'id_indikator', 'var_id');
     }
 }

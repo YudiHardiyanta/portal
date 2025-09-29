@@ -1,3 +1,3 @@
-var_id,title,id_standar,id_dashboard,id_indikator,sub_id,subcsa_id,def,notes,unit
-405,Indeks Harga Konsumen (IHK) Bulanan Provinsi Bali,27010028,15,1,3,536,,"Sumber: Survei Harga Konsumen, BPS.",Tidak Ada Satuan
-319,Indeks Kemahalan Konstruksi Menurut Kabupaten/Kota di Provinsi Bali,27010032,16,2,4,559,,"Sumber: Survei Harga Kemahalan Konstruksi, BPS Provinsi Bali.",Tidak Ada Satuan
+var_id,title,id_standar,id_dashboard,id_indikator,id_kegiatan,sub_id,subcsa_id,def,notes,unit
+405,Indeks Harga Konsumen (IHK) Bulanan Provinsi Bali,27010028,15,1,1,3,536,,"Sumber: Survei Harga Konsumen, BPS.",Tidak Ada Satuan
+319,Indeks Kemahalan Konstruksi Menurut Kabupaten/Kota di Provinsi Bali,27010032,16,2,2,4,559,,"Sumber: Survei Harga Kemahalan Konstruksi, BPS Provinsi Bali.",Tidak Ada Satuan

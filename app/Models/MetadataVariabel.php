@@ -8,6 +8,7 @@ class MetadataVariabel extends Model
 {
     protected $table = 'metadata_variabel';
     protected $primaryKey = 'id_variabel';
+    public $incrementing = true;
 
     protected $fillable = [
         'id_variabel',

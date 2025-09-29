@@ -1,3 +1,6 @@
+import 'katex/dist/katex.min.css';
+import { BlockMath } from 'react-katex';
+
 export default function MetadataIndikator({ metadata }) {
     return (
         <div className="space-y-3">
@@ -25,7 +28,11 @@ export default function MetadataIndikator({ metadata }) {
                 </div>
                 <div>
                     <span className="font-semibold">Rumus:</span>{" "}
-                    {metadata?.rumus ?? "-"}
+                    {metadata?.rumus ? (
+                        <BlockMath math={metadata.rumus} />
+                    ) : (
+                        "-"
+                    )}
                 </div>
                 <div>
                     <span className="font-semibold">Ukuran:</span>{" "}

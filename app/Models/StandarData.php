@@ -29,20 +29,30 @@ class StandarData extends Model
 
     public function konsep()
     {
-        return $this->belongsToMany(Konsep::class, 'standar_data_konsep', 'id_standar', 'id_konsep')->withTimestamps();
+        return $this->belongsToMany(
+            Konsep::class,
+            'standar_data_konsep',
+            'id_standar',          
+            'id_konsep'            
+        )->withTimestamps();
     }
+
 
     public function metadataKegiatan()
     {
-        return $this->hasMany(MetadataKegiatan::class, 'id_standar', 'id');
+        return $this->hasMany(
+            MetadataKegiatan::class,
+            'id_standar', 
+            'id_standar'  
+        );
     }
 
     public function indicator()
     {
         return $this->hasOne(
             Indicator::class,
-            'id_standar',
-            'id_standar'
+            'id_standar', 
+            'id_standar'   
         );
     }
 }

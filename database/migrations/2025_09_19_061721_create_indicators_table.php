@@ -13,8 +13,8 @@ return new class extends Migration {
         Schema::create('indicators', function (Blueprint $table) {
             $table->unsignedBigInteger('var_id')->primary();
             $table->unsignedBigInteger('id_dashboard')->nullable();
-
             $table->unsignedBigInteger('id_standar')->nullable();
+            $table->unsignedBigInteger('id_kegiatan')->nullable();
             $table->unsignedBigInteger('id_indikator')->nullable();
             $table->string('slug')->unique();
             $table->string('title');
@@ -31,6 +31,9 @@ return new class extends Migration {
                 ->onDelete('cascade');
             $table->foreign('id_indikator')
                 ->references('id_indikator')->on('metadata_indikator')
+                ->onDelete('cascade');
+            $table->foreign('id_kegiatan')
+                ->references('id_kegiatan')->on('metadata_kegiatan')
                 ->onDelete('cascade');
             $table->foreign('sub_id')
                 ->references('id')->on('kategori')

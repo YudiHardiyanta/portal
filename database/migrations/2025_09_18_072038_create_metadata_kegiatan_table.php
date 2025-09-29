@@ -11,11 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('metadata_kegiatan', function (Blueprint $table) {
-            $table->id();
-            // foreign keys
-            // $table->unsignedBigInteger('id_indikator');
-            // $table->unsignedBigInteger('id_standar');
-
+            $table->id('id_kegiatan');
             $table->string('judul_kegiatan');
             $table->string('tahun')->nullable();
             $table->string('jenis_statistik')->nullable();
@@ -42,15 +38,21 @@ return new class extends Migration {
             $table->longText('tujuan_kegiatan')->nullable();
 
             // Jadwal
-            $table->json('jadwal_perencanaan_kegiatan')->nullable();
-            $table->json('jadwal_desain')->nullable();
-            $table->json('jadwal_pengumpulan_data')->nullable();
-            $table->json('jadwal_pengolahan_data')->nullable();
-            $table->json('jadwal_analisis')->nullable();
-            $table->json('jadwal_diseminasi_hasil')->nullable();
-            $table->json('jadwal_evaluasi')->nullable();
+            $table->date('mulai_jadwal_perencanaan_kegiatan')->nullable();
+            $table->date('selesai_jadwal_perencanaan_kegiatan')->nullable();
+            $table->date('mulai_jadwal_desain')->nullable();
+            $table->date('selesai_jadwal_desain')->nullable();
+            $table->date('mulai_jadwal_pengumpulan_data')->nullable();
+            $table->date('selesai_jadwal_pengumpulan_data')->nullable();
+            $table->date('mulai_jadwal_pengolahan_data')->nullable();
+            $table->date('selesai_jadwal_pengolahan_data')->nullable();
+            $table->date('mulai_jadwal_analisis')->nullable();
+            $table->date('selesai_jadwal_analisis')->nullable();
+            $table->date('mulai_jadwal_diseminasi_hasil')->nullable();
+            $table->date('selesai_jadwal_diseminasi_hasil')->nullable();
+            $table->date('mulai_jadwal_evaluasi')->nullable();
+            $table->date('selesai_jadwal_evaluasi')->nullable();
 
-            $table->json('variabel_yang_dikumpulkan')->nullable();
             $table->string('kegiatan_ini_dilakukan')->nullable();
             $table->string('frekuensi_penyelanggara')->nullable();
             $table->string('tipe_pengumpulan_data')->nullable();
@@ -63,47 +65,32 @@ return new class extends Migration {
             $table->string('jenis_rancangan_sampel')->nullable();
             $table->string('metode_pemilihan_sampel_tahap_terakhir')->nullable();
             $table->string('metode_yang_digunakan')->nullable();
-            $table->string('kerangka_sampel_tahap_terakhir')->nullable();
-            $table->string('fraksi_sampel_keseluruhan')->nullable();
-            $table->string('nilai_perkiraan_sampling_error_variabel_utama')->nullable();
             $table->string('unit_sampel')->nullable();
             $table->string('unit_observasi')->nullable();
 
             // Kualitas
-            $table->string('apakah_melakukan_uji_coba')->nullable();
+            $table->boolean('apakah_melakukan_uji_coba')->nullable();
             $table->string('metode_pemeriksaan_kualitas_pengumpulan_data')->nullable();
-            $table->string('apakah_melakukan_penyesuaian_nonrespon')->nullable();
+            $table->boolean('apakah_melakukan_penyesuaian_nonrespon')->nullable();
             $table->string('petugas_pengumpulan_data')->nullable();
             $table->string('persyaratan_pendidikan_terendah_petugas_pengumpulan_data')->nullable();
             $table->integer('jumlah_petugas_supervisor')->nullable();
             $table->integer('jumlah_petugas_enumerator')->nullable();
-            $table->string('apakah_melakukan_pelatihan_petugas')->nullable();
+            $table->boolean('apakah_melakukan_pelatihan_petugas')->nullable();
 
-            $table->longText('tahapan_pengolahan_data')->nullable();
+            $table->text('tahapan_pengolahan_data')->nullable();
             $table->string('metode_analisis')->nullable();
             $table->string('unit_analisis')->nullable();
             $table->string('tingkat_penyajian_hasil_analisis')->nullable();
 
             // Produk
-            $table->string('ketersediaan_produk_tercetak')->nullable();
-            $table->string('ketersediaan_produk_digital')->nullable();
-            $table->string('ketersediaan_produk_mikrodata')->nullable();
+            $table->boolean('ketersediaan_produk_tercetak')->nullable();
+            $table->boolean('ketersediaan_produk_digital')->nullable();
+            $table->boolean('ketersediaan_produk_mikrodata')->nullable();
             $table->json('rencana_jadwal_rilis_produk_tercetak')->nullable();
             $table->json('rencana_jadwal_rilis_produk_digital')->nullable();
             $table->json('rencana_jadwal_rilis_produk_mikrodata')->nullable();
-
-            $table->string('produsen_data_name')->nullable();
             $table->timestamps();
-
-            // Foreign Keys
-            // $table->foreign('id_indikator')
-            //     ->references('var_id')
-            //     ->on('indicators')
-            //     ->onDelete('cascade');
-
-            // $table->foreign('id_standar')
-            //     ->references('id_standar')->on('standar_data')
-            //     ->onDelete('cascade');
         });
     }
 

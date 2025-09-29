@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Konsep extends Model
 {
+    use HasFactory;
+
     protected $table = 'konsep';
     protected $primaryKey = 'id_konsep';
 
@@ -13,10 +16,11 @@ class Konsep extends Model
         'kode_konsep',
         'konsep',
         'definisi',
+        'id_standar',
     ];
 
     public function standarData()
     {
-        return $this->belongsToMany(StandarData::class, 'standar_data_konsep', 'id_konsep', 'id_standar')->withTimestamps();
+        return $this->belongsTo(StandarData::class, 'id_standar', 'id_standar');
     }
 }

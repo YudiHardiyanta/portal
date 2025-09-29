@@ -5,10 +5,16 @@ import { Eye, Heart, Folder, Tag, StickyNote, AlertCircle } from "lucide-react";
 
 import MetadataIndikator from "./Metadata/Indikator";
 import MetadataVariabel from "./Metadata/Variabel";
-import MetadataKegiatan from "./Metadata/Kegiatan";
+import StandarData from "./StandarData";
+import InformasiUmum from "./Metadata/Kegiatan/InformasiUmum";
+import Perencanaan from "./Metadata/Kegiatan/Perencanaan";
+import Desain from "./Metadata/Kegiatan/Desain";
+import PengumpulanData from "./Metadata/Kegiatan/PengumpulanData";
+import Pengolahan from "./Metadata/Kegiatan/Pengolahan";
 
 export default function Show({ indicator, token }) {
     const { auth } = usePage().props;
+    const [activeSubKegiatan, setActiveSubKegiatan] = useState("informasiUmum");
     const [activeTab, setActiveTab] = useState("data");
     const [activeSubTab, setActiveSubTab] = useState("indikator");
     const [liked, setLiked] = useState(indicator.is_liked ?? false);
@@ -93,7 +99,7 @@ export default function Show({ indicator, token }) {
                     </div>
                 </div>
 
-                <div className="px-6">
+                <div className="px-6 pb-6">
                     <div className="mx-auto mt-6 bg-white border shadow-lg rounded-2xl">
                         <div className="flex border-b">
                             {["data", "metadata", "standar"].map(tab => (
@@ -131,21 +137,55 @@ export default function Show({ indicator, token }) {
                                 <div className="flex">
                                     <div className="w-1/4 border-r bg-gray-50/50">
                                         {["indikator", "variabel", "kegiatan"].map(sub => (
-                                            <button
-                                                key={sub}
-                                                onClick={() => setActiveSubTab(sub)}
-                                                className={`block w-full px-4 py-3 text-left transition-colors duration-150 ${
-                                                    activeSubTab === sub
-                                                        ? "bg-blue-50 text-blue-700 font-semibold border-r-2 border-blue-600"
-                                                        : "text-gray-700 hover:bg-gray-100"
-                                                }`}
-                                            >
-                                                {sub === "indikator"
-                                                    ? "Metadata Indikator"
-                                                    : sub === "variabel"
-                                                        ? "Metadata Variabel"
-                                                        : "Metadata Kegiatan"}
-                                            </button>
+                                            <div key={sub}>
+                                                <button
+                                                    onClick={() => setActiveSubTab(sub)}
+                                                    className={`block w-full px-4 py-3 text-left transition-colors duration-150 ${
+                                                        activeSubTab === sub
+                                                            ? "bg-blue-50 text-blue-700 font-semibold border-r-2 border-blue-600"
+                                                            : "text-gray-700 hover:bg-gray-100"
+                                                    }`}
+                                                >
+                                                    {sub === "indikator"
+                                                        ? "Metadata Indikator"
+                                                        : sub === "variabel"
+                                                            ? "Metadata Variabel"
+                                                            : "Metadata Kegiatan"}
+                                                </button>
+
+                                                {sub === "kegiatan" && activeSubTab === "kegiatan" && (
+                                                    <div className="ml-4 border-l">
+                                                        {[
+                                                            "informasiUmum",
+                                                            "perencanaan",
+                                                            "desain",
+                                                            "pengumpulanData",
+                                                            "pengolahan",
+                                                        ].map(item => (
+                                                            <button
+                                                                key={item}
+                                                                onClick={() => setActiveSubKegiatan(item)}
+                                                                className={`block w-full px-4 py-2 text-left text-sm transition-colors duration-150 ${
+                                                                    activeSubKegiatan === item
+                                                                        ? "bg-blue-100 text-blue-700 font-semibold border-r-2 border-blue-600"
+                                                                        : "text-gray-600 hover:bg-gray-100"
+                                                                }`}
+                                                            >
+                                                                {item === "informasiUmum"
+                                                                    ? "Informasi Umum"
+                                                                    : item === "perencanaan"
+                                                                        ? "Perencanaan"
+                                                                        : item === "desain"
+                                                                            ? "Desain"
+                                                                            : item === "pengumpulanData"
+                                                                                ? "Pengumpulan Data"
+                                                                                : "Pengolahan dan Diseminasi"
+                                                                }
+                                                            </button>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </div>
                                         ))}
                                     </div>
 
@@ -156,18 +196,23 @@ export default function Show({ indicator, token }) {
                                         {activeSubTab === "variabel" && (
                                             <MetadataVariabel metadata={indicator.metadata_variabel} />
                                         )}
+
                                         {activeSubTab === "kegiatan" && (
-                                            <MetadataKegiatan metadata={indicator.metadata_kegiatan} />
+                                            <>
+                                                {activeSubKegiatan === "informasiUmum" && <InformasiUmum metadataKegiatan={indicator.metadata_kegiatan} />}
+                                                {activeSubKegiatan === "desain" && <Desain metadataKegiatan={indicator.metadata_kegiatan} />}
+                                                {activeSubKegiatan === "indikatorKeuangan" && <div>Halaman Indikator Keuangan</div>}
+                                                {activeSubKegiatan === "pengolahan" && <Pengolahan metadataKegiatan={indicator.metadata_kegiatan} />}
+                                                {activeSubKegiatan === "pengumpulanData" && <PengumpulanData metadataKegiatan={indicator.metadata_kegiatan} />}
+                                                {activeSubKegiatan === "perencanaan" && <Perencanaan metadataKegiatan={indicator.metadata_kegiatan} />}
+                                            </>
                                         )}
                                     </div>
                                 </div>
                             )}
 
-                            {activeTab === "standar" && (
-                                <div>
-                                    <h2 className="mb-2 text-lg font-bold">Standar Data</h2>
-                                    <p className="text-gray-700">Penjelasan Standar Data ditampilkan di sini.</p>
-                                </div>
+                           {activeTab === "standar" && (
+                                <StandarData standar_data={indicator.standar_data}/>
                             )}
                         </div>
                     </div>
